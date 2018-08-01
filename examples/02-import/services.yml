@@ -1,0 +1,4 @@
+- service: one
+  with: options
+- service: two
+  with: options

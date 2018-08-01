@@ -1,0 +1,5 @@
+{
+  @import default
+  "folders":
+  @import folders
+}
