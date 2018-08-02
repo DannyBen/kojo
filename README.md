@@ -1,4 +1,6 @@
-Kojo
+![kojo](kojo.png)
+
+Kojo - Configuration Ninja
 ==================================================
 
 [![Gem](https://img.shields.io/gem/v/kojo.svg?style=flat-square)](https://rubygems.org/gems/kojo)
@@ -8,7 +10,7 @@ Kojo
 
 ---
 
-Configuration wizard
+
 
 ---
 

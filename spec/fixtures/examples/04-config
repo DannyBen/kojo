@@ -1,0 +1,17 @@
++ bundle exec kojo run config.yml
+
+# small-app.yml
+version: '3'
+
+services:
+  name: one
+  domain: one.ninja.com
+  scale: 1
+
+# big-app.yml
+version: '3'
+
+services:
+  name: two
+  domain: two.ninja.com
+  scale: 2

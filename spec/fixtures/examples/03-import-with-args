@@ -1,0 +1,15 @@
++ bundle exec kojo generate main.yml environment=production
+services:
+  - service: one
+    with: options
+  - service: two
+    with: options
+
+apps:
+  app-one:
+    with: options
+    env: production
+  
+  app-two:
+    with: more options
+    env: production

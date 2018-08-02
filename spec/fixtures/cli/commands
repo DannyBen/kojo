@@ -1,0 +1,3 @@
+Commands:
+  [1;32mgenerate  [0mGenerate a file from a template
+  [1;32mrun       [0mRun and process a config file
