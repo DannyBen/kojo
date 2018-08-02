@@ -1,5 +1,5 @@
 app-one:
-  with: options
+  environment: %{env}
 
 app-two:
-  with: more options
+  environment: %{env}

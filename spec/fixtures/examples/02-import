@@ -6,7 +6,7 @@ services:
 
 apps:
   app-one:
-    with: options
+    environment: production
   
   app-two:
-    with: more options
+    environment: production

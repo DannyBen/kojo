@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-set -x
-bundle exec kojo generate main.yml environment=production

@@ -1,7 +1,0 @@
-app-one:
-  with: options
-  env: %{environment}
-
-app-two:
-  with: more options
-  env: %{environment}

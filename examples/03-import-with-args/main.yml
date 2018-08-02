@@ -1,5 +1,0 @@
-services:
-  @import services
-
-apps:
-  @import apps (environment: '%{environment}')

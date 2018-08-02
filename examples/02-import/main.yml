@@ -2,4 +2,4 @@ services:
   @import services
 
 apps:
-  @import apps (environment: 'production')
+  @import apps (env: 'production')
