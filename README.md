@@ -3,14 +3,9 @@
 Kojo - Configuration Ninja
 ==================================================
 
-[![Gem](https://img.shields.io/gem/v/kojo.svg?style=flat-square)](https://rubygems.org/gems/kojo)
-[![Build](https://img.shields.io/travis/DannyBen/kojo.svg?style=flat-square)](https://travis-ci.org/DannyBen/kojo)
-[![Maintainability](https://img.shields.io/codeclimate/maintainability/DannyBen/kojo.svg?style=flat-square)](https://codeclimate.com/github/DannyBen/kojo)
-[![Issues](https://img.shields.io/codeclimate/issues/github/DannyBen/kojo.svg?style=flat-square)](https://codeclimate.com/github/DannyBen/kojo)
-
----
-
-
+[![Gem Version](https://badge.fury.io/rb/kojo.svg)](https://badge.fury.io/rb/kojo)
+[![Build Status](https://travis-ci.com/DannyBen/kojo.svg?branch=master)](https://travis-ci.com/DannyBen/kojo)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f24566ad04b5054a2251/maintainability)](https://codeclimate.com/github/DannyBen/kojo/maintainability)
 
 ---
 
