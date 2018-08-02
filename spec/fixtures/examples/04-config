@@ -1,4 +1,3 @@
-+ bundle exec kojo run config.yml
 
 # small-app.yml
 version: '3'

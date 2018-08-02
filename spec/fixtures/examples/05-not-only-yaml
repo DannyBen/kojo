@@ -1,4 +1,3 @@
-+ bundle exec kojo generate main.json
 {
   "color_scheme": "IDLE Modded.tmTheme",
   "default_line_ending": "unix",
