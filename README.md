@@ -24,6 +24,12 @@ Installation
     $ gem install kojo
 
 
+Examples
+--------------------------------------------------
+
+See the [examples](examples) folder.
+
+
 Usage
 --------------------------------------------------
 

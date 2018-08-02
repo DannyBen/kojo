@@ -14,4 +14,18 @@ action :console, :c do
   run "bundle exec bin/console"
 end
 
+help "Generate example output files"
+action :examples do
+  say_status :invoke, 'examples'
+
+  Dir['examples/*'].each do |folder|
+    say_status :process, folder
+
+    Dir.chdir folder do
+      system "./runme > output.txt 2>&1"
+    end
+  end
+  say_status :done, ''
+end
+
 require './debug.rb' if File.exist? 'debug.rb'
