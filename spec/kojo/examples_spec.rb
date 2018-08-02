@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe 'examples' do
   it "work" do
-    Dir['examples/*'].each do |example|
+    dirs = Dir['examples/*'].select { |f| File.directory? f }
+    dirs.each do |example|
       name = File.basename example
       result = nil
       Dir.chdir example do
