@@ -1,0 +1,12 @@
+services:
+  - service: one
+    with: options
+  - service: two
+    with: options
+
+apps:
+  app-one:
+    environment: production
+  
+  app-two:
+    environment: production
