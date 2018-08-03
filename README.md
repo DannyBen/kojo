@@ -57,6 +57,8 @@ resulting configuration file.
 - The indentation will be respected when importing.
 - The `filename` parameter does not have to include an extension - Kojo will
   use the same extension as the parent file.
+- The included file will be searched for relative to the file it is included 
+  in.
 - Arguments can be passed down to the included template by using this syntax:
 
 ```ruby
@@ -89,3 +91,4 @@ output:
     argument1: value
     argument2: value
 ```
+
