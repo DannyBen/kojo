@@ -16,7 +16,8 @@ module Kojo
     private
 
     def import(file, args={})
-      self.class.new("#{dir}/#{file}#{extension}", args).render
+      filename = File.expand_path "#{file}#{extension}", dir
+      self.class.new(filename, args).render
     end
 
     def evaluate(file, args={})
