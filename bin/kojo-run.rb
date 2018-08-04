@@ -18,18 +18,19 @@ action do |args|
   gen = Kojo::Generator.new args['CONFIG']
   outdir = args['--save']
   
-  if outdir
-    FileUtils.mkdir_p outdir unless Dir.exist? outdir
+  if outdir and !Dir.exist? outdir
+    FileUtils.mkdir_p outdir
+  end
 
-    gen.generate do |file, output|
-      path = "#{outdir}/#{file}"
+  gen.generate do |file, output|
+    path = "#{outdir}/#{file}"
+    if outdir
       File.write path, output
       say "Saved #{path}"
+    else
+      say "\n!txtgrn!# #{file}"
+      say output
     end
-  
-  else
-    puts gen.generate
-  
   end
 end
 
