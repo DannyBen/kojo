@@ -3,6 +3,9 @@ require 'spec_helper'
 describe 'examples' do
   it "work" do
     dirs = Dir['examples/*'].select { |f| File.directory? f }
+
+    # dirs = Dir["examples/06*"]
+
     dirs.each do |example|
       name = File.basename example
       result = nil
@@ -10,7 +13,7 @@ describe 'examples' do
         result = `bundle exec ./runme 2>/dev/null`
       end
       puts "  --> #{name}"
-      expect(result).to match_fixture("examples/#{name}")
+      expect(result).to match_fixture("examples/stdout/#{name}")
 
       result_file = "#{example}/result.yml"
       result_dir  = "#{example}/result"
@@ -22,10 +25,10 @@ describe 'examples' do
 
       if Dir.exist? result_dir
         puts "    > Verifying result dir"
-        Dir["#{result_dir}/*"].each do |file|
-          filename = File.basename file
-          puts "    > Verifying #{filename}"
-          expect(File.read file).to match_fixture("examples/results/#{filename}")
+        files = Dir["#{result_dir}/**/*"].reject { |f| File.directory? f }
+        files.each do |file|
+          puts "    > Verifying #{file}"
+          expect(File.read file).to match_fixture("examples/results/#{file}")
         end
       end
     end
