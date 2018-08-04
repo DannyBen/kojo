@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  name: two
+  domain: two.ninja.com
+  scale: 2

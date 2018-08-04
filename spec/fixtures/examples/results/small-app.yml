@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  name: one
+  domain: one.ninja.com
+  scale: 1
