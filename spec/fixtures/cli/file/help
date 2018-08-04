@@ -1,0 +1,21 @@
+Compile a file from a template
+
+Usage:
+  kojo file INFILE [--save FILE] [ARGS...]
+  kojo file (-h|--help)
+
+Options:
+  -s --save FILE
+    Save to file instead of printing
+
+  -h --help
+    Show this help
+
+Parameters:
+  ARGS
+    Optional key=value pairs
+
+Examples:
+  kojo file main.yml
+  kojo file main.yml --save out.yml
+  kojo file main.yml -s out.yml app=lause

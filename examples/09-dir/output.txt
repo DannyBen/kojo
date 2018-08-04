@@ -1,0 +1,2 @@
++ kojo dir templates --save result --import imports env=production app=hello
+./runme: line 3: kojo: command not found

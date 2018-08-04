@@ -1,3 +1,0 @@
-Usage:
-  kojo generate INFILE [--save FILE] [ARGS...]
-  kojo generate (-h|--help)

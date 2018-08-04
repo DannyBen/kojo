@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 set -x
-kojo generate main.yml --save result.yml domain=example.com scale=2
+kojo file main.yml --save result.yml domain=example.com scale=2

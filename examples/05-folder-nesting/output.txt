@@ -1,7 +1,2 @@
-services:
-  app:
-    - did it work?
-    - it did work!
-
-loopback:
-  - indeed-ee-oh
++ kojo file main.yml
+./runme: line 3: kojo: command not found

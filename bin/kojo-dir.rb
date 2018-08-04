@@ -2,17 +2,17 @@ require 'kojo'
 
 help "Compile a folder of templates to a similar output folder"
 
-usage "kojo compile INDIR [--save DIR --import DIR] [ARGS...]"
-usage "kojo compile (-h|--help)"
+usage "kojo dir INDIR [--save DIR --import DIR] [ARGS...]"
+usage "kojo dir (-h|--help)"
 
 option "-s --save DIR", "Save output to directory instead of printing"
 option "-i --import DIR", "Specify base directory for @import directives"
 
 param "ARGS", "Optional key=value pairs"
 
-example "kojo compile indir"
-example "kojo compile in --save out env=production"
-example "kojo compile in --save out --import snippets env=production"
+example "kojo dir indir"
+example "kojo dir in --save out env=production"
+example "kojo dir in --save out --import snippets env=production"
 
 action do |args|
   opts = args['ARGS'].args_to_hash

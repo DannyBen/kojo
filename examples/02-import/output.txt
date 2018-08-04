@@ -1,13 +1,2 @@
-+ bundle exec kojo generate main.yml
-services:
-  - service: one
-    with: options
-  - service: two
-    with: options
-
-apps:
-  app-one:
-    environment: production
-  
-  app-two:
-    environment: production
++ kojo file main.yml
+./runme: line 3: kojo: command not found

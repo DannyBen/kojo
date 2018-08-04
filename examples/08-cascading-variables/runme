@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 set -x
-kojo generate main.yml app=from-command-line domain=example.com
+kojo file main.yml app=from-command-line domain=example.com

@@ -1,0 +1,24 @@
+Compile a folder of templates to a similar output folder
+
+Usage:
+  kojo dir INDIR [--save DIR --import DIR] [ARGS...]
+  kojo dir (-h|--help)
+
+Options:
+  -s --save DIR
+    Save output to directory instead of printing
+
+  -i --import DIR
+    Specify base directory for @import directives
+
+  -h --help
+    Show this help
+
+Parameters:
+  ARGS
+    Optional key=value pairs
+
+Examples:
+  kojo dir indir
+  kojo dir in --save out env=production
+  kojo dir in --save out --import snippets env=production

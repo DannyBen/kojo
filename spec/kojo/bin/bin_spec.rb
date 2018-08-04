@@ -9,7 +9,7 @@ describe 'bin/kojo' do
 
   context "on exception" do
     it "errors gracefuly" do
-      expect(`bin/kojo generate no-such-file 2>&1`).to match_fixture('cli/exception')
+      expect(`bin/kojo file no-such-file 2>&1`).to match_fixture('cli/exception')
     end
   end
 end

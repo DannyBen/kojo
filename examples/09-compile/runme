@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-set -x
-kojo compile templates --save result --import imports env=production app=hello
