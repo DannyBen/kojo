@@ -15,9 +15,10 @@ module Kojo
 
     private
 
-    def import(file, args={})
+    def import(file, import_args={})
       filename = File.expand_path "#{file}#{extension}", dir
-      self.class.new(filename, args).render
+      all_args = args.merge import_args
+      self.class.new(filename, all_args).render
     end
 
     def evaluate(file, args={})

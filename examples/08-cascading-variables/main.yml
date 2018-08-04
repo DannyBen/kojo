@@ -1,0 +1,6 @@
+# This will use variables from the command line
+@import application
+
+# This will use a predefined 'app', and 'domain' from the command line
+@import application (app: 'from-config')
+
