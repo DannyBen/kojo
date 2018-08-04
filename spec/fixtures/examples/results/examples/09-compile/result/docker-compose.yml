@@ -1,0 +1,8 @@
+services:
+  db:
+    image: postgres
+
+  app:
+    build: .
+    environment:
+    - ENVIRONMENT=production
