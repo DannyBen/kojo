@@ -97,7 +97,7 @@ output:
 
 ### Compile an Entire Folder
 
-![kojo](images/features-compile.svg)
+![kojo](images/features-dir.svg)
 
 Process a folder containing templates and `@imports`, and generate a mirror
 output folder, with all the variables and `@imports` evaluated.

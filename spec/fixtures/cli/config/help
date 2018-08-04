@@ -1,0 +1,21 @@
+Generate based on instructions from a config file
+
+Usage:
+  kojo config CONFIG [--save DIR] [ARGS...]
+  kojo config (-h|--help)
+
+Options:
+  -s --save DIR
+    Save output to directory instead of printing
+
+  -h --help
+    Show this help
+
+Parameters:
+  ARGS
+    Optional key=value pairs
+
+Examples:
+  kojo config config.yml
+  kojo config config.yml --save output
+  kojo config config.yml -s output scale=3
