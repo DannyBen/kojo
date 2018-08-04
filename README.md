@@ -24,14 +24,14 @@ Installation
     $ gem install kojo
 
 
-Examples
---------------------------------------------------
-
-See the [examples](examples) folder.
-
 
 Usage
 --------------------------------------------------
+
+If you prefer to learn by example, see the [examples](examples) folder for 
+several use cases. Each example subfolder contains the command to run, the 
+relevant files, and the expected output.
+
 
 ### Variables
 
