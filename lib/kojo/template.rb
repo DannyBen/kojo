@@ -1,12 +1,14 @@
 module Kojo
   class Template
     attr_reader :file, :extension, :args, :dir
+    attr_accessor :import_base
 
     def initialize(file, args={})
       @file = file
       @args = args
       @extension = file[/(\..*)$/]
       @dir = File.dirname file
+      @import_base = dir
     end
 
     def render
@@ -16,7 +18,7 @@ module Kojo
     private
 
     def import(file, import_args={})
-      filename = File.expand_path "#{file}#{extension}", dir
+      filename = File.expand_path "#{file}#{extension}", import_base
       all_args = args.merge import_args
       self.class.new(filename, all_args).render
     end

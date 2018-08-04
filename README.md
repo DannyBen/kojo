@@ -43,7 +43,9 @@ Include variables in your configuration templates using this syntax:
 %{varname}
 ```
 
-Variables can be provided through the command line, or when using `@import`.
+- Variables can be provided through the command line, or when using `@import`.
+- Variables from the top level will be forwarded downstream, and aggregated 
+  with any additional variables that are defined in subsequent `@imports`.
 
 
 ### Import
@@ -92,3 +94,10 @@ output:
     argument2: value
 ```
 
+
+### Compile an Entire Folder
+
+![kojo](images/features-compile.svg)
+
+Process a folder containing templates and `@imports`, and generate a mirror
+output folder, with all the variables and `@imports` evaluated.
