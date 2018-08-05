@@ -7,3 +7,8 @@ require 'kojo/generator'
 require 'kojo/version'
 
 require 'byebug' if ENV['BYEBUG']
+
+module Kojo
+  module Commands
+  end
+end
