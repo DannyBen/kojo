@@ -1,4 +1,4 @@
 Commands:
-  [1;32mconfig  [0mGenerate based on instructions from a config file
-  [1;32mdir     [0mCompile a folder of templates to a similar output folder
   [1;32mfile    [0mCompile a file from a template
+  [1;32mdir     [0mCompile a folder of templates to a similar output folder
+  [1;32mconfig  [0mGenerate based on instructions from a config file

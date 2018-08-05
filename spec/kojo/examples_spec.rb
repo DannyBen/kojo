@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe 'examples' do
+  subject { CLI.runner }
+
   it "work" do
     dirs = Dir['examples/*'].select { |f| File.directory? f }
 
@@ -9,11 +11,15 @@ describe 'examples' do
     dirs.each do |example|
       name = File.basename example
       result = nil
-      Dir.chdir example do
-        result = `bundle exec ./runme 2>/dev/null`
-      end
+      
       puts "  --> #{name}"
-      expect(result).to match_fixture("examples/stdout/#{name}")
+
+      Dir.chdir example do
+        cmd = `tail -n1 runme`
+        args = cmd.split ' '
+        args.shift
+        expect{ subject.run args }.to output_fixture("examples/stdout/#{name}")
+      end
 
       result_file = "#{example}/result.yml"
       result_dir  = "#{example}/result"
