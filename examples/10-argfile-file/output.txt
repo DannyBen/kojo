@@ -1,0 +1,4 @@
++ kojo file main.yml --args args.yml
+services:
+  domain: www.ninja.com
+  scale: 3

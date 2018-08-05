@@ -18,7 +18,7 @@ help "Generate example output files"
 action :examples do
   say_status :invoke, 'examples'
 
-  dirs = Dir['examples/*'].reject { |f| File.directory? f }
+  dirs = Dir['examples/*'].select { |f| File.directory? f }
 
   dirs.each do |folder|
     say_status :process, folder

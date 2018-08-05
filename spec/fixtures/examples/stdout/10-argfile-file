@@ -1,0 +1,3 @@
+services:
+  domain: www.ninja.com
+  scale: 3

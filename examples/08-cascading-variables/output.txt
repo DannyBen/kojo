@@ -1,2 +1,8 @@
 + kojo file main.yml app=from-command-line domain=example.com
-./runme: line 3: kojo: command not found
+# This will use variables from the command line
+from-command-line:
+  domain: example.com
+
+# This will use a predefined 'app', and 'domain' from the command line
+from-config:
+  domain: example.com

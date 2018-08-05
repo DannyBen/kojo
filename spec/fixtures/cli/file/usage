@@ -1,3 +1,3 @@
 Usage:
-  kojo file INFILE [--save FILE] [ARGS...]
+  kojo file INFILE [--save FILE --args FILE] [ARGS...]
   kojo file (-h|--help)

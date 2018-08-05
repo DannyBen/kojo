@@ -12,8 +12,9 @@ module Kojo
       base_dir = File.dirname config_file
       infile = "#{base_dir}/#{config['input']}"
 
-      config['output'].each do |outfile, opts|      
-        output = render infile, opts.symbolize_keys
+      config['output'].each do |outfile, config_opts|      
+        local_opts = opts.merge config_opts.symbolize_keys
+        output = render infile, local_opts
         yield outfile, output
       end
     end
@@ -25,7 +26,7 @@ module Kojo
     end
 
     def render(infile, opts={})
-      Template.new(infile, opts).render
+      Template.new(infile, opts).render      
     end
   end
 

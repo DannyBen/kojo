@@ -1,12 +1,15 @@
 Generate based on instructions from a config file
 
 Usage:
-  kojo config CONFIG [--save DIR] [ARGS...]
+  kojo config CONFIG [--save DIR --args FILE] [ARGS...]
   kojo config (-h|--help)
 
 Options:
   -s --save DIR
     Save output to directory instead of printing
+
+  -a --args FILE
+    Load arguments from YAML file
 
   -h --help
     Show this help
@@ -19,3 +22,4 @@ Examples:
   kojo config config.yml
   kojo config config.yml --save output
   kojo config config.yml -s output scale=3
+  kojo config config.yml -s output --args args.yml

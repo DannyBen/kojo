@@ -1,2 +1,2 @@
 + kojo file main.yml --save result.yml domain=example.com scale=2
-./runme: line 3: kojo: command not found
+Saved result.yml

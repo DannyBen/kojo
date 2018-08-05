@@ -1,7 +1,7 @@
 Compile a folder of templates to a similar output folder
 
 Usage:
-  kojo dir INDIR [--save DIR --import DIR] [ARGS...]
+  kojo dir INDIR [--save DIR --import DIR --args FILE] [ARGS...]
   kojo dir (-h|--help)
 
 Options:
@@ -10,6 +10,9 @@ Options:
 
   -i --import DIR
     Specify base directory for @import directives
+
+  -a --args FILE
+    Load arguments from YAML file
 
   -h --help
     Show this help
@@ -22,3 +25,4 @@ Examples:
   kojo dir indir
   kojo dir in --save out env=production
   kojo dir in --save out --import snippets env=production
+  kojo dir in -s out -i snippets -a args.yml

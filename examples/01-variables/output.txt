@@ -1,2 +1,4 @@
 + kojo file main.yml domain=example.com scale=2
-./runme: line 3: kojo: command not found
+services:
+  domain: example.com
+  scale: 2

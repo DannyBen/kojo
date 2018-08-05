@@ -1,11 +1,10 @@
-+ kojo config config.yml
 
 # small-app.yml
 version: '3'
 
 services:
   name: one
-  domain: one.ninja.com
+  domain: www.from-cli.com
   scale: 1
 
 # big-app.yml
@@ -13,5 +12,5 @@ version: '3'
 
 services:
   name: two
-  domain: two.ninja.com
-  scale: 2
+  domain: www.from-config.com
+  scale: 9

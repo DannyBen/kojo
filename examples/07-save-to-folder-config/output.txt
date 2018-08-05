@@ -1,2 +1,3 @@
 + kojo config config.yml --save result
-./runme: line 3: kojo: command not found
+Saved result/small-app.yml
+Saved result/big-app.yml

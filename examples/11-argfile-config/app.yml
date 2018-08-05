@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  name: %{app}
+  domain: %{domain}
+  scale: %{scale}

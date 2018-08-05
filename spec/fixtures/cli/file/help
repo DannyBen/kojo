@@ -1,12 +1,15 @@
 Compile a file from a template
 
 Usage:
-  kojo file INFILE [--save FILE] [ARGS...]
+  kojo file INFILE [--save FILE --args FILE] [ARGS...]
   kojo file (-h|--help)
 
 Options:
   -s --save FILE
     Save to file instead of printing
+
+  -a --args FILE
+    Load arguments from YAML file
 
   -h --help
     Show this help
@@ -19,3 +22,4 @@ Examples:
   kojo file main.yml
   kojo file main.yml --save out.yml
   kojo file main.yml -s out.yml app=lause
+  kojo file main.yml -s out.yml --args args.yml
