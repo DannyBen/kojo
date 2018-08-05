@@ -1,10 +1,7 @@
 #!/usr/bin/env ruby
 require 'kojo'
-require 'mister_bin'
-require 'kojo/version'
 
-runner = MisterBin::Runner.new 'kojo', basedir: __dir__,
-  header: "Kojo #{Kojo::VERSION}"
+runner = Kojo::CLI.runner
 
 begin
   exit runner.run ARGV

@@ -1,26 +1,14 @@
 require 'stringio'
 
 module SpecMixin
-  def stdin_send(*args)
+  def capture_stdout
     begin
-      $stdin = StringIO.new
-      $stdin.puts(args.shift) until args.empty?
-      $stdin.rewind
+      old_stdout = $stdout
+      $stdout = StringIO.new
       yield
+      $stdout.string
     ensure
-      $stdin = STDIN
+      $stdout = old_stdout
     end
   end
-
-  def supress_output
-    original_stdout = $stdout
-    $stdout = StringIO.new
-    begin
-      yield
-    ensure
-      $stdout = original_stdout
-    end
-  end
-
-  # Put more helper methods here
 end

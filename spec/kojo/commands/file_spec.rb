@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'bin/kojo-file' do
-  subject { MisterBin::Runner.new 'kojo', basedir: 'bin' }
+  subject { CLI.runner }
 
   context "without arguments" do
     it "shows short usage" do
