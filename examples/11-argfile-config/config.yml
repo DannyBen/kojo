@@ -1,0 +1,10 @@
+input: app.yml
+
+output:
+  small-app.yml:
+    app: one
+    scale: 1
+
+  big-app.yml:
+    app: two
+    domain: www.from-config.com

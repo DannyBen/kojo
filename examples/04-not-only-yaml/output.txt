@@ -1,2 +1,12 @@
 + kojo file main.json
-./runme: line 3: kojo: command not found
+{
+  "color_scheme": "IDLE Modded.tmTheme",
+  "default_line_ending": "unix",
+  "folders":
+  [
+    {
+      "file_exclude_patterns": ["*.sublime-workspace"],
+      "folder_exclude_patterns": ["dev"]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+services:
+  @import common_services
+
+  app:
+    build: .
+    environment:
+    - ENVIRONMENT=%{env}

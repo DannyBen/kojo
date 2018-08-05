@@ -1,0 +1,17 @@
++ kojo config config.yml --args args.yml domain=www.from-cli.com
+
+# small-app.yml
+version: '3'
+
+services:
+  name: one
+  domain: www.from-cli.com
+  scale: 1
+
+# big-app.yml
+version: '3'
+
+services:
+  name: two
+  domain: www.from-config.com
+  scale: 9
