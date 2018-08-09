@@ -1,5 +1,19 @@
 # Change Log
 
+## [v0.2.2](https://github.com/DannyBen/kojo/tree/v0.2.2) (2018-08-09)
+[Full Changelog](https://github.com/DannyBen/kojo/compare/v0.2.1...v0.2.2)
+
+**Implemented enhancements:**
+
+- Catch common exceptions [\#12](https://github.com/DannyBen/kojo/issues/12)
+- Add ability to use config for multiple folder generation [\#4](https://github.com/DannyBen/kojo/issues/4)
+
+**Merged pull requests:**
+
+- Refactor for many-to-many generation [\#14](https://github.com/DannyBen/kojo/pull/14) ([DannyBen](https://github.com/DannyBen))
+- Catch common template and input errors [\#13](https://github.com/DannyBen/kojo/pull/13) ([DannyBen](https://github.com/DannyBen))
+- Collection Refactor [\#11](https://github.com/DannyBen/kojo/pull/11) ([DannyBen](https://github.com/DannyBen))
+
 ## [v0.2.1](https://github.com/DannyBen/kojo/tree/v0.2.1) (2018-08-09)
 [Full Changelog](https://github.com/DannyBen/kojo/compare/v0.2.0...v0.2.1)
 
