@@ -56,7 +56,7 @@ module Kojo
     end
 
     def erb(template, vars)
-      ERB.new(template, nil, '%-').result(OpenStruct.new(vars).instance_eval { binding })
+      ERB.new(template, nil, '-').result(OpenStruct.new(vars).instance_eval { binding })
     end
 
     def indent(text, spaces)

@@ -1,0 +1,10 @@
+services:
+  web:
+    domain: %{domain}
+    scale: %{scale}
+
+  <%- if production and scale > 2 -%>
+  proxy:
+    image: nginx
+    scale: %{scale}
+  <%- end -%>

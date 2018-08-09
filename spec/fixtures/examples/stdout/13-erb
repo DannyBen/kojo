@@ -1,0 +1,8 @@
+services:
+  web:
+    domain: hello.com
+    scale: 3
+
+  proxy:
+    image: nginx
+    scale: 3

@@ -18,6 +18,19 @@ It is a command line utility, and it works on any text file format.
 
 ---
 
+Table of Contents
+--------------------------------------------------
+
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Variables](#variables)
+  - [Import](#import)
+  - [One to Many Generation](#one-to-many-generation)
+  - [Compile an Entire Folder](#compile-an-entire-folder)
+  - [Conditions and Loops with ERB](#conditions-and-loops-with-erb)
+
+---
+
 Installation
 --------------------------------------------------
 
@@ -48,6 +61,7 @@ Include variables in your configuration templates using this syntax:
   with any additional variables that are defined in subsequent `@imports`.
 
 
+
 ### Import
 
 ![kojo](images/features-import.svg)
@@ -68,6 +82,7 @@ resulting configuration file.
 ```
 
 The space after `filename` is optional.
+
 
 
 ### One to Many Generation
@@ -95,9 +110,28 @@ output:
 ```
 
 
+
 ### Compile an Entire Folder
 
 ![kojo](images/features-dir.svg)
 
 Process a folder containing templates and `@imports`, and generate a mirror
 output folder, with all the variables and `@imports` evaluated.
+
+
+
+### Conditions and Loops with ERB
+
+![kojo](images/features-erb.svg)
+
+Template files are evaluated using ERB, so you can use any Ruby code for more
+advanced templates (for conditions, loops etc.).
+
+Use this syntax for ruby code:
+
+```erb
+<%- ruby code here -%>     # for code that should not be printed
+<%= ruby code here -%>     # for code that should be printed
+```
+
+
