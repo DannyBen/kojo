@@ -1,3 +1,6 @@
+require 'erb'
+require 'ostruct'
+
 module Kojo
   class Template
     attr_reader :file, :extension, :args, :dir
@@ -17,14 +20,15 @@ module Kojo
 
     private
 
-    def import(file, import_args={})
-      filename = File.expand_path "#{file}#{extension}", import_base
-      all_args = args.merge import_args
-      self.class.new(filename, all_args).render
+    def evaluate(file, args={})
+      content = File.read(file)
+
+      content = erb content, args
+      content = content % args
+      content = eval_imports content   
     end
 
-    def evaluate(file, args={})
-      content = File.read(file) % args
+    def eval_imports(content)
       result = []
       
       content.lines.each do |line|
@@ -41,7 +45,18 @@ module Kojo
         
         result.push line
       end
+
       result.join "\n"
+    end
+
+    def import(file, import_args={})
+      filename = File.expand_path "#{file}#{extension}", import_base
+      all_args = args.merge import_args
+      self.class.new(filename, all_args).render
+    end
+
+    def erb(template, vars)
+      ERB.new(template, nil, '%-').result(OpenStruct.new(vars).instance_eval { binding })
     end
 
     def indent(text, spaces)
