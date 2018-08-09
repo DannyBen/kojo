@@ -1,0 +1,10 @@
+input: in
+
+output:
+  eu-central:
+    app: one
+    scale: 1
+
+  us-east:
+    app: two
+    scale: 2

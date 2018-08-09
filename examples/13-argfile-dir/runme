@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-set -x
-kojo dir templates --save result --import imports --args args.yml

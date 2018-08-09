@@ -1,0 +1,2 @@
+- log:/var/log
+- $PWD/%{app}:/app

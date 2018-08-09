@@ -1,0 +1,7 @@
+services:
+  name: one
+  scale: 1
+
+volumes:
+  - log:/var/log
+  - $PWD/one:/app

@@ -1,4 +1,4 @@
-+ kojo dir templates --import imports env=production app=hello
++ kojo dir templates --imports imports env=production app=hello
 
 # config/database.yml
 production:

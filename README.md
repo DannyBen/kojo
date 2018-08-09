@@ -25,8 +25,8 @@ Table of Contents
 - [Usage](#usage)
   - [Variables](#variables)
   - [Import](#import)
-  - [One to Many Generation](#one-to-many-generation)
   - [Compile an Entire Folder](#compile-an-entire-folder)
+  - [One to Many Generation](#one-to-many-generation)
   - [Conditions and Loops with ERB](#conditions-and-loops-with-erb)
 
 ---
@@ -85,15 +85,28 @@ The space after `filename` is optional.
 
 
 
+### Compile an Entire Folder
+
+![kojo](images/features-dir.svg)
+
+Process a folder containing templates and `@imports`, and generate a mirror
+output folder, with all the variables and `@imports` evaluated.
+
+
+
 ### One to Many Generation
 
 ![kojo](images/features-config.svg)
 
-In order to generate several configuration files that are based on the same 
-template, you should:
+Using the `kojo config` command together with a simple definitions file, you
+can:
 
-1. Create the configuration template, using `%{variables}` and `@imports` 
-   where appropriate.
+1. Generate multiple output files based on a single template file
+2. Generate multiple output directories, based on a single source directory.
+
+To achieve this, you need to:
+
+1. Create the configuration template or directory of templates.
 2. Create a configuration YAML file using this syntax:
 
 ```yaml
@@ -109,15 +122,22 @@ output:
     argument2: value
 ```
 
+When using a folder as input, simply provide the folder name in the `input` 
+property, and instead of providing desired output filenames in the `output`
+property, provide desired output directories:
 
+```yaml
+input: base
 
-### Compile an Entire Folder
+output:
+  app1:
+    argument1: value
+    argument2: value
 
-![kojo](images/features-dir.svg)
-
-Process a folder containing templates and `@imports`, and generate a mirror
-output folder, with all the variables and `@imports` evaluated.
-
+  app2:
+    argument1: value
+    argument2: value
+```
 
 
 ### Conditions and Loops with ERB
