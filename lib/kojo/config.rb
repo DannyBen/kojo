@@ -5,9 +5,11 @@ module Kojo
   # definitions YAML file.
   class Config
     attr_reader :config_file, :outdir
+    attr_accessor :import_base
 
     def initialize(config_file)
       @config_file = config_file
+      @import_base = nil
     end
 
     def generate(opts={}, &block)
@@ -23,7 +25,10 @@ module Kojo
     def generate_from_file(opts)
       config['output'].each do |target, config_opts|
         local_opts = opts.merge config_opts.symbolize_keys
+        
         template = Template.new source
+        template.import_base = import_base if import_base
+        
         yield target, template.render(local_opts)
       end
     end
@@ -33,6 +38,7 @@ module Kojo
         local_opts = opts.merge config_opts.symbolize_keys
 
         collection = Collection.new source
+        collection.import_base = import_base if import_base
 
         collection.render(local_opts) do |file, output|
           yield "#{dir}/#{file}", output
@@ -55,10 +61,6 @@ module Kojo
     def config
       @config ||= YAML.load_file config_file
     end
-
-    # def render(infile, opts={})
-    #   Template.new(infile).render(opts)
-    # end
   end
 
 end

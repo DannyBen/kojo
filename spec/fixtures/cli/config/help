@@ -1,12 +1,15 @@
 Generate based on instructions from a config file
 
 Usage:
-  kojo config CONFIG [--save DIR --args FILE] [ARGS...]
+  kojo config CONFIG [--save DIR --imports DIR --args FILE] [ARGS...]
   kojo config (-h|--help)
 
 Options:
   -s --save DIR
     Save output to directory instead of printing
+
+  -i --imports DIR
+    Specify base directory for @import directives
 
   -a --args FILE
     Load arguments from YAML file

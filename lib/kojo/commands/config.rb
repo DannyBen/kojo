@@ -4,14 +4,15 @@ require 'mister_bin'
 module Kojo::Commands
   # Handle calls to the +kojo config+ command
   class ConfigCmd < MisterBin::Command
-    attr_reader :gen, :outdir, :opts
+    attr_reader :gen, :outdir, :opts, :import_base, :config_file
 
     help "Generate based on instructions from a config file"
 
-    usage "kojo config CONFIG [--save DIR --args FILE] [ARGS...]"
+    usage "kojo config CONFIG [--save DIR --imports DIR --args FILE] [ARGS...]"
     usage "kojo config (-h|--help)"
 
     option "-s --save DIR", "Save output to directory instead of printing"
+    option "-i --imports DIR", "Specify base directory for @import directives"
     option "-a --args FILE", "Load arguments from YAML file"
 
     param "ARGS", "Optional key=value pairs"
@@ -22,9 +23,10 @@ module Kojo::Commands
     example "kojo config config.yml -s output --args args.yml"
 
     def run(args)
-      @gen = Kojo::Config.new args['CONFIG']
+      @config_file = args['CONFIG']
       @outdir = args['--save']
       @opts = args['ARGS'].args_to_hash
+      @import_base = args['--imports']
       argfile = args['--args']
 
       if argfile
@@ -36,7 +38,10 @@ module Kojo::Commands
     end
 
     def run!
-      gen.generate opts do |file, output|
+      config = Kojo::Config.new config_file
+      config.import_base = import_base if import_base
+
+      config.generate opts do |file, output|
         handle file, output
       end
     end
