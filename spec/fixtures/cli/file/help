@@ -1,12 +1,15 @@
 Compile a file from a template
 
 Usage:
-  kojo file INFILE [--save FILE --args FILE] [ARGS...]
+  kojo file INFILE [--save FILE --imports DIR --args FILE] [ARGS...]
   kojo file (-h|--help)
 
 Options:
   -s --save FILE
     Save to file instead of printing
+
+  -i --imports DIR
+    Specify base directory for @import directives
 
   -a --args FILE
     Load arguments from YAML file

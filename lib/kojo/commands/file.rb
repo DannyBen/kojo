@@ -3,14 +3,15 @@ require 'mister_bin'
 module Kojo::Commands
   # Handle calls to the +kojo file+ command
   class FileCmd < MisterBin::Command
-    attr_reader :opts, :outfile, :infile
+    attr_reader :opts, :outfile, :infile, :import_base
 
     help "Compile a file from a template"
 
-    usage "kojo file INFILE [--save FILE --args FILE] [ARGS...]"
+    usage "kojo file INFILE [--save FILE --imports DIR --args FILE] [ARGS...]"
     usage "kojo file (-h|--help)"
 
     option "-s --save FILE", "Save to file instead of printing"
+    option "-i --imports DIR", "Specify base directory for @import directives"
     option "-a --args FILE", "Load arguments from YAML file"
 
     param "ARGS", "Optional key=value pairs"
@@ -24,6 +25,7 @@ module Kojo::Commands
       @opts = args['ARGS'].args_to_hash
       @outfile = args['--save']
       @infile = args['INFILE']
+      @import_base = args['--imports']
       argfile = args['--args']
 
       if argfile
@@ -35,7 +37,9 @@ module Kojo::Commands
     end
 
     def run!
-      output = Kojo::Template.new(infile).render(opts)
+      template = Kojo::Template.new infile
+      template.import_base = import_base if import_base
+      output = template.render(opts)
 
       if outfile
         File.write outfile, output
