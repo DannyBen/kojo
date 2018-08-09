@@ -14,12 +14,12 @@ describe String do
       expect("1.2.3".to_typed).to eq "1.2.3"
     end
 
-    it "is works with truthy" do
+    it "works with truthy" do
       expect("yes".to_typed).to be true
       expect("true".to_typed).to be true
     end
 
-    it "is works with falsy" do
+    it "works with falsy" do
       expect("no".to_typed).to be false
       expect("false".to_typed).to be false
     end
