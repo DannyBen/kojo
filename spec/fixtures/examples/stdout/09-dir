@@ -1,3 +1,17 @@
-Saved result/config/database.yml
-Saved result/docker-compose.yml
-Saved result/taskfile
+
+[0;32m# config/database.yml
+[0mproduction:
+  database: rails_hello
+
+[0;32m# docker-compose.yml
+[0mservices:
+  db:
+    image: postgres
+
+  app:
+    build: .
+    environment:
+    - ENVIRONMENT=production
+
+[0;32m# taskfile
+[0mweb: puma --env production

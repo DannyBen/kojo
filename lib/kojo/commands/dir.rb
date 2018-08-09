@@ -37,32 +37,32 @@ module Kojo::Commands
 
     private
 
-    def files
-      @files ||= Dir["#{indir}/**/*"].reject { |file| File.directory? file }
-    end
-
     def run!
-      files.each do |file|
-        handle file
+      collection = Kojo::Collection.new @indir
+      collection.import_base = import_base if import_base
+
+      if outdir
+        write collection
+      else
+        show collection
       end
     end
 
-    def handle(file)
-      template = Kojo::Template.new(file, opts)
-      template.import_base = import_base if import_base
-      output = template.render
-
-      if outdir
-        save file, output
-      else
-        outpath = file.sub(/#{indir}/, '')
-        say "\n!txtgrn!# #{outpath}"
+    def show(collection)
+      collection.render @opts do |file, output|
+        say "\n!txtgrn!# #{file}"
         say output
       end
     end
 
+    def write(collection)
+      collection.render @opts do |file, output|
+        save file, output
+      end
+    end
+
     def save(file, output)
-      outpath = file.sub(/#{indir}/, outdir)
+      outpath = "#{outdir}/#{file}"
       dir = File.dirname outpath
       FileUtils.mkdir_p dir unless Dir.exist? dir
       File.write outpath, output
