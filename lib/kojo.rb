@@ -1,12 +1,6 @@
-require 'kojo/extensions/array'
-require 'kojo/extensions/hash'
-
-require 'kojo/cli'
-require 'kojo/template'
-require 'kojo/generator'
-require 'kojo/version'
-
+require 'requires'
 require 'byebug' if ENV['BYEBUG']
+requires 'kojo'
 
 module Kojo
   module Commands

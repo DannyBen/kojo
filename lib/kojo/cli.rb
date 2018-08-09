@@ -1,5 +1,4 @@
 require 'mister_bin'
-require 'kojo/commands'
 
 module Kojo
   class CLI

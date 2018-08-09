@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe Hash do
-  subject { {"key" => "val", "anotherkey" => "anotherval"} }
+describe Array do
+  subject { %w[scale=2 production=yes app=ninja] }
 
-  describe '#symbolize_keys' do
-    it "converts keys to symbols" do
-      expect(subject.symbolize_keys).to eq({ key: 'val', anotherkey: 'anotherval' })
+  describe '#args_to_hash' do
+    it "converts array of 'key=value' to symbolized and typed hash" do
+      expect(subject.args_to_hash).to eq({ scale: 2, production: true, app: "ninja" })
     end
   end
 end

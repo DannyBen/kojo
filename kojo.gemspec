@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = ">= 2.5.0"
 
   s.add_runtime_dependency 'mister_bin', '~> 0.3'
+  s.add_runtime_dependency 'requires', '~> 0.1'
 
   s.add_development_dependency 'byebug', '~> 10.0'
   s.add_development_dependency 'rspec', '~> 3.6'

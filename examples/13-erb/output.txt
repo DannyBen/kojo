@@ -1,0 +1,9 @@
++ kojo file main.yml domain=hello.com scale=3 production=yes
+services:
+  web:
+    domain: hello.com
+    scale: 3
+
+  proxy:
+    image: nginx
+    scale: 3
