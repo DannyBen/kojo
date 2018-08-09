@@ -1,9 +1,7 @@
-require 'kojo'
+require 'mister_bin'
 
 module Kojo::Commands
   class FileCmd < MisterBin::Command
-    include Colsole
-
     attr_reader :opts, :outfile, :infile
 
     help "Compile a file from a template"

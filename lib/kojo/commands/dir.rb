@@ -1,7 +1,7 @@
+require 'mister_bin'
+
 module Kojo::Commands
   class DirCmd < MisterBin::Command
-    include Colsole
-
     attr_reader :opts, :indir, :outdir, :import_base
 
     help "Compile a folder of templates to a similar output folder"

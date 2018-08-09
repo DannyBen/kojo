@@ -1,9 +1,8 @@
 require 'fileutils'
+require 'mister_bin'
 
 module Kojo::Commands
   class ConfigCmd < MisterBin::Command
-    include Colsole
-
     attr_reader :gen, :outdir, :opts
 
     help "Generate based on instructions from a config file"
