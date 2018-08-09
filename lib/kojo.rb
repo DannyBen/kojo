@@ -1,6 +1,6 @@
 require 'requires'
 require 'byebug' if ENV['BYEBUG']
-requires 'kojo/extensions', 'kojo'
+requires 'kojo'
 
 module Kojo
   module Commands
