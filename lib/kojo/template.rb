@@ -12,7 +12,7 @@ module Kojo
 
     def initialize(file)
       @file = file
-      @extension = file[/(\..*)$/]
+      @extension = File.extname file
       @dir = File.dirname file
       @import_base = dir
     end

@@ -1,0 +1,6 @@
+services:
+  name: %{app}
+  scale: %{scale}
+
+volumes:
+  @import volumes

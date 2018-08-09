@@ -1,0 +1,7 @@
+services:
+  name: two
+  scale: 2
+
+volumes:
+  - log:/var/log
+  - $PWD/two:/app

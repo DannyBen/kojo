@@ -1,0 +1,3 @@
++ kojo config config.yml --imports imports --save result
+Saved result/eu-central/app.yml
+Saved result/us-east/app.yml
