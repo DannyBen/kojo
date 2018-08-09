@@ -6,6 +6,6 @@ class Hash
   end
 
   def typecast_values
-    transform_values &:to_type
+    transform_values &:to_typed
   end
 end

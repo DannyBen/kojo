@@ -1,31 +1,31 @@
 require 'spec_helper'
 
 describe String do
-  describe '#to_type' do
+  describe '#to_typed' do
     it "works with integer" do
-      expect("123".to_type).to eq 123
+      expect("123".to_typed).to eq 123
     end
 
     it "works with float" do
-      expect("1.2".to_type).to eq 1.2
+      expect("1.2".to_typed).to eq 1.2
     end
 
     it "is not confused by non-floats" do
-      expect("1.2.3".to_type).to eq "1.2.3"
+      expect("1.2.3".to_typed).to eq "1.2.3"
     end
 
     it "is works with truthy" do
-      expect("yes".to_type).to be true
-      expect("true".to_type).to be true
+      expect("yes".to_typed).to be true
+      expect("true".to_typed).to be true
     end
 
     it "is works with falsy" do
-      expect("no".to_type).to be false
-      expect("false".to_type).to be false
+      expect("no".to_typed).to be false
+      expect("false".to_typed).to be false
     end
 
     it "works with a string" do
-      expect("boom".to_type).to eq "boom"
+      expect("boom".to_typed).to eq "boom"
     end
 
   end

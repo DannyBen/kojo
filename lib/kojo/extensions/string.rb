@@ -1,5 +1,5 @@
 class String
-  def to_type
+  def to_typed
     if self =~ /\A[+-]?\d+\Z/
       self.to_i
 
