@@ -41,7 +41,7 @@ Installation
 Usage
 --------------------------------------------------
 
-If you prefer to learn by example, see the [examples](examples) folder for 
+If you prefer to learn by example, see the [examples](examples#examples) folder for 
 several use cases. Each example subfolder contains the command to run, the 
 relevant files, and the expected output.
 
