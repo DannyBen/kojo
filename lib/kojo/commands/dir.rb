@@ -7,25 +7,25 @@ module Kojo::Commands
 
     help "Compile a folder of templates to a similar output folder"
 
-    usage "kojo dir INDIR [--save DIR --import DIR --args FILE] [ARGS...]"
+    usage "kojo dir INDIR [--save DIR --imports DIR --args FILE] [ARGS...]"
     usage "kojo dir (-h|--help)"
 
     option "-s --save DIR", "Save output to directory instead of printing"
-    option "-i --import DIR", "Specify base directory for @import directives"
+    option "-i --imports DIR", "Specify base directory for @import directives"
     option "-a --args FILE", "Load arguments from YAML file"
 
     param "ARGS", "Optional key=value pairs"
 
     example "kojo dir indir"
     example "kojo dir in --save out env=production"
-    example "kojo dir in --save out --import snippets env=production"
+    example "kojo dir in --save out --imports snippets env=production"
     example "kojo dir in -s out -i snippets -a args.yml"
 
     def run(args)
       @opts = args['ARGS'].args_to_hash
       @indir = args['INDIR']
       @outdir = args['--save']
-      @import_base = args['--import']
+      @import_base = args['--imports']
       argfile = args['--args']
 
       if argfile
