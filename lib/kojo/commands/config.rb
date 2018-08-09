@@ -22,7 +22,7 @@ module Kojo::Commands
     example "kojo config config.yml -s output --args args.yml"
 
     def run(args)
-      @gen = Kojo::Generator.new args['CONFIG']
+      @gen = Kojo::Config.new args['CONFIG']
       @outdir = args['--save']
       @opts = args['ARGS'].args_to_hash
       argfile = args['--args']
