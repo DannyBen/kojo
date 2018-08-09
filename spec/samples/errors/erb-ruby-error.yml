@@ -1,0 +1,4 @@
+services:
+  <%- if this is going to fail -%>
+  failed: true
+  <%- end -%>

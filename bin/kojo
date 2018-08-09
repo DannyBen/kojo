@@ -6,7 +6,6 @@ runner = Kojo::CLI.runner
 begin
   exit runner.run ARGV
 rescue => e
-  puts e.backtrace.reverse if ENV['DEBUG']
-  say! "!txtred!#{e.class}: #{e.message}"
+  say! "!undred!#{e.class}!txtrst!\n#{e.message}"
   exit 1
 end

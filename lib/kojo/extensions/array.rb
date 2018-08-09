@@ -1,6 +1,7 @@
 require 'kojo/extensions/hash'
 
 class Array
+  # Convert an array of +["key=value", "key=value"]+ pairs to a hash
   def args_to_hash
     collect { |a| k, v = a.split '=' }
       .to_h

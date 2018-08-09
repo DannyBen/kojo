@@ -2,6 +2,10 @@ require 'erb'
 require 'ostruct'
 
 module Kojo
+  # The Template class handles a single template file, and processes it for:
+  # - Variables (using +%{var}+ syntax)
+  # - ERB
+  # - +@import+ statements
   class Template
     attr_reader :file, :extension, :dir, :args
     attr_accessor :import_base
@@ -21,13 +25,30 @@ module Kojo
     private
 
     def evaluate(file)
-      content = File.read(file)
-
-      content = erb content, args
-      content = content % args
+      content = read_file file
+      content = eval_erb content
+      content = eval_vars content
       content = eval_imports content
-
       content
+    end
+
+    def read_file(file)
+      raise Kojo::NotFoundError, "File not found: #{file}" unless File.exist? file
+      File.read file
+    end
+
+    def eval_vars(content)
+      content % args
+    rescue ArgumentError, KeyError => e
+      raise Kojo::TemplateError, "#{e.message}\nin: #{file}"
+    end
+
+    def eval_erb(content)
+      erb content, args
+    rescue RuntimeError => e
+      raise Kojo::TemplateError, "Invalid Ruby code #{e.message}\nin: #{file}"
+    rescue SyntaxError => e
+      raise Kojo::TemplateError, "#{e.message}\nin: #{file}"
     end
 
     def eval_imports(content)

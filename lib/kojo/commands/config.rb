@@ -2,6 +2,7 @@ require 'fileutils'
 require 'mister_bin'
 
 module Kojo::Commands
+  # Handle calls to the +kojo config+ command
   class ConfigCmd < MisterBin::Command
     attr_reader :gen, :outdir, :opts
 

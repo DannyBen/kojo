@@ -1,6 +1,7 @@
 require 'mister_bin'
 
 module Kojo::Commands
+  # Handle calls to the +kojo file+ command
   class FileCmd < MisterBin::Command
     attr_reader :opts, :outfile, :infile
 
