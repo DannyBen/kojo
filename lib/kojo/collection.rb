@@ -8,7 +8,7 @@ module Kojo
       @import_base = dir
     end
 
-    def render(args, &block)
+    def render(args={}, &block)
       files.each do |file|
         handle file, args, &block
       end
@@ -17,12 +17,12 @@ module Kojo
     private
 
     def handle(file, args={})
-      template = Template.new file, args
+      template = Template.new file
       template.import_base = import_base
 
       path = file.sub(/#{dir}\//, '')
       
-      yield path, template.render
+      yield path, template.render(args)
     end
 
     def files

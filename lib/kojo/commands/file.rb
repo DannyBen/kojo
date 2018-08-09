@@ -34,7 +34,7 @@ module Kojo::Commands
     end
 
     def run!
-      output = Kojo::Template.new(infile, opts).render
+      output = Kojo::Template.new(infile).render(opts)
 
       if outfile
         File.write outfile, output

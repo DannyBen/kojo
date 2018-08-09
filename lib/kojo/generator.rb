@@ -26,7 +26,7 @@ module Kojo
     end
 
     def render(infile, opts={})
-      Template.new(infile, opts).render      
+      Template.new(infile).render(opts)
     end
   end
 
