@@ -30,11 +30,9 @@ module Kojo
     def files
       return @files if @files
       raise Kojo::NotFoundError, "Directory not found: #{dir}" unless Dir.exist? dir
+      raise Kojo::NotFoundError, "Directory is empty: #{dir}" if Dir.empty? dir
 
       @files = Dir["#{dir}/**/*"].reject { |f| File.directory? f }
-      raise Kojo::NotFoundError, "Directory is empty: #{dir}" if @files.empty?
-      
-      @files
     end
   end
 end
