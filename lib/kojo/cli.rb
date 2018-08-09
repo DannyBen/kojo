@@ -1,6 +1,8 @@
 require 'mister_bin'
 
 module Kojo
+  # The CLI class is used by the kojo binary and forwards incoming CLI 
+  # commands to the relevant Kojo::Commands class
   class CLI
     def self.runner
       runner = MisterBin::Runner.new version: Kojo::VERSION

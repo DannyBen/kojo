@@ -1,6 +1,7 @@
 require 'mister_bin'
 
 module Kojo::Commands
+  # Handle calls to the +kojo dir+ command
   class DirCmd < MisterBin::Command
     attr_reader :opts, :indir, :outdir, :import_base
 

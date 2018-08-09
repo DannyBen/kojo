@@ -1,4 +1,6 @@
 module Kojo
+  # The Collection class is a wrapper around the {Template} object. It 
+  # provides a mechanism for processing an entire directory of templates.
   class Collection
     attr_reader :dir
     attr_accessor :import_base
@@ -26,7 +28,11 @@ module Kojo
     end
 
     def files
-      @files ||= Dir["#{dir}/**/*"].reject { |f| File.directory? f }
+      return @files if @files
+      raise Kojo::NotFoundError, "Directory not found: #{dir}" unless Dir.exist? dir
+      raise Kojo::NotFoundError, "Directory is empty: #{dir}" if Dir.empty? dir
+
+      @files = Dir["#{dir}/**/*"].reject { |f| File.directory? f }
     end
   end
 end

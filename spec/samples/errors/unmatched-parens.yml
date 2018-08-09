@@ -1,0 +1,2 @@
+services:
+  app: %{app

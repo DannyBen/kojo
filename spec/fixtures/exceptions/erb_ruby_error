@@ -1,0 +1,3 @@
+Kojo::TemplateError
+Invalid Ruby code 
+in: spec/samples/errors/erb-ruby-error.yml

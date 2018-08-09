@@ -1,0 +1,3 @@
+Kojo::TemplateError
+key{app} not found
+in: spec/samples/errors/missing-arg.yml

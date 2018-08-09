@@ -1,6 +1,8 @@
 require 'yaml'
 
 module Kojo
+  # The Generator class handles multiple template generation from a 
+  # definitions YAML file.
   class Generator
     attr_reader :config_file, :outdir
 
