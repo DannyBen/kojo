@@ -26,6 +26,8 @@ module Kojo
       content = erb content, args
       content = content % args
       content = eval_imports content   
+
+      content
     end
 
     def eval_imports(content)
