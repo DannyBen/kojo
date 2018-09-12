@@ -92,6 +92,8 @@ The space after `filename` is optional.
 Process a folder containing templates and `@imports`, and generate a mirror
 output folder, with all the variables and `@imports` evaluated.
 
+You may use `%{variables}` in filenames.
+
 
 
 ### One to Many Generation
