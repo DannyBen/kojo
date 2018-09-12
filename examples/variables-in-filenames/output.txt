@@ -1,0 +1,9 @@
++ kojo dir templates env=production app=hello replicas=2
+
+# hello-deployment.yml
+metadata:
+  name: hello
+  namespace: production
+
+spec:
+  replicas: 2

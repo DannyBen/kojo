@@ -1,0 +1,8 @@
+
+[0;32m# hello-deployment.yml
+[0mmetadata:
+  name: hello
+  namespace: production
+
+spec:
+  replicas: 2
