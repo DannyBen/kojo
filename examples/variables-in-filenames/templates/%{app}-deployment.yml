@@ -1,0 +1,6 @@
+metadata:
+  name: %{app}
+  namespace: %{env}
+
+spec:
+  replicas: %{replicas}

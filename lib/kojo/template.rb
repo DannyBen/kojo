@@ -58,7 +58,7 @@ module Kojo
         line.chomp!
         spaces = line[/^\s*/].size
 
-        if line =~ /@import ([^(\s]*)\s*(?:\((.*)\))?\s*/
+        if line =~ /^\s*@import ([^(\s]*)\s*(?:\((.*)\))?\s*/
           file = $1
           args = $2 || ''
           args = instance_eval("{#{args}}")

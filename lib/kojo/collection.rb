@@ -22,8 +22,8 @@ module Kojo
       template = Template.new file
       template.import_base = import_base
 
-      path = file.sub(/#{dir}\//, '')
-      
+      path = file.sub(/#{dir}\//, '') % args
+
       yield path, template.render(args)
     end
 
