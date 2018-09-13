@@ -8,7 +8,6 @@ describe 'custom exceptions' do
   let :cases do
     {
       unmatched_parens: %W[file #{samples}/unmatched-parens.yml],
-      missing_arg:      %W[file #{samples}/missing-arg.yml],
       file_not_found:   %W[file no-file-here],
       dir_not_found:    %W[dir no-dir-here],
       empty_dir:        %W[dir #{empty_dir}],

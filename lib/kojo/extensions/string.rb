@@ -15,4 +15,18 @@ class String
 
     end
   end
+
+  def resolve(vars)
+    self % vars
+  
+  rescue KeyError => e
+    print "> #{e.key}: "
+    response = $stdin.gets
+    
+    raise Kojo::TemplateError, e.message unless response
+
+    vars[e.key] = response.chomp
+    retry
+  end
+
 end
