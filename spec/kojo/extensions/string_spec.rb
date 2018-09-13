@@ -51,6 +51,15 @@ describe String do
           end
         end
       end
+
+      context "when the user presses Ctrl+C" do
+        it "raises Kojo::Interrupt" do
+          supress_output do
+            expect($stdin).to receive(:gets).and_raise Interrupt
+            expect{ subject.resolve({}) }.to raise_error Kojo::Interrupt
+          end
+        end
+      end
     end
   end
 end

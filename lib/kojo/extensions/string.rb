@@ -21,12 +21,17 @@ class String
   
   rescue KeyError => e
     print "> #{e.key}: "
-    response = $stdin.gets
-    
-    raise Kojo::TemplateError, e.message unless response
-
-    vars[e.key] = response.chomp
+    vars[e.key] = get_user_input
     retry
   end
 
+  private 
+
+  def get_user_input
+    response = $stdin.gets
+    raise Kojo::Interrupt unless response # Ctrl+D
+    response.chomp
+  rescue Interrupt # Ctrl+C
+    raise Kojo::Interrupt
+  end
 end
