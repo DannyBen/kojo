@@ -38,8 +38,8 @@ module Kojo
     end
 
     def eval_vars(content)
-      content % args
-    rescue ArgumentError, KeyError => e
+      content.resolve args
+    rescue ArgumentError => e
       raise Kojo::TemplateError, "#{e.message}\nin: #{file}"
     end
 

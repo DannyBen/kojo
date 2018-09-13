@@ -29,4 +29,28 @@ describe String do
     end
 
   end
+
+  describe '#resolve' do
+    subject { "hello %{name}" }
+
+    it "substitutes variables in a string" do
+      expect(subject.resolve name: 'world').to eq "hello world"
+    end
+
+    context "when the hash does not contain the needed variable" do
+      it "prompts the user for input" do 
+        send_input "bob" do
+          expect{ subject.resolve({}) }.to output('> name: ').to_stdout
+        end
+      end
+
+      it "uses the users input as the value" do
+        supress_output do
+          send_input "bob" do
+            expect(subject.resolve({})).to eq "hello bob"
+          end
+        end
+      end
+    end
+  end
 end
