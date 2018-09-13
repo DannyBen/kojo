@@ -50,13 +50,12 @@ relevant files, and the expected output.
 
 ![kojo](images/features-vars.svg)
 
-Include variables in your configuration templates using this syntax:
-
-```ruby
-%{varname}
-```
+Include variables in your configuration templates by using this syntax: 
+`%{varname}`
 
 - Variables can be provided through the command line, or when using `@import`.
+- When one or more variables are not provided, you will be prompted to provide
+  a value.
 - Variables from the top level will be forwarded downstream, and aggregated 
   with any additional variables that are defined in subsequent `@imports`.
 
