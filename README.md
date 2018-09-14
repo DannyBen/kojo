@@ -28,6 +28,7 @@ Table of Contents
   - [Compile an Entire Folder](#compile-an-entire-folder)
   - [One to Many Generation](#one-to-many-generation)
   - [Conditions and Loops with ERB](#conditions-and-loops-with-erb)
+- [Interactive Mode](#interactive-mode)
 
 ---
 
@@ -155,4 +156,12 @@ Use this syntax for ruby code:
 <%= ruby code here -%>     # for code that should be printed
 ```
 
+
+Interactive Mode
+--------------------------------------------------
+
+When Kojo encounters a variable that was not supplied (either through the command 
+line or through a configuration file), it will prompt for a value.
+
+![kojo](images/interactive-mode.gif)
 
