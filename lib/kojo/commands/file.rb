@@ -21,7 +21,7 @@ module Kojo::Commands
     example "kojo file main.yml -s out.yml app=lause"
     example "kojo file main.yml -s out.yml --args args.yml"
 
-    def run(args)
+    def run
       @opts = args['ARGS'].args_to_hash
       @outfile = args['--save']
       @infile = args['INFILE']

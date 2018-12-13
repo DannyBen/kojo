@@ -17,13 +17,6 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
   s.required_ruby_version = ">= 2.5.0"
 
-  s.add_runtime_dependency 'mister_bin', '~> 0.3'
+  s.add_runtime_dependency 'mister_bin', '~> 0.6'
   s.add_runtime_dependency 'requires', '~> 0.1'
-
-  s.add_development_dependency 'byebug', '~> 10.0'
-  s.add_development_dependency 'rspec', '~> 3.6'
-  s.add_development_dependency 'rspec_fixtures', '~> 0.3'
-  s.add_development_dependency 'runfile', '~> 0.10'
-  s.add_development_dependency 'runfile-tasks', '~> 0.4'
-  s.add_development_dependency 'simplecov', '~> 0.15'
 end

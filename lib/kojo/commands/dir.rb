@@ -21,7 +21,7 @@ module Kojo::Commands
     example "kojo dir in --save out --imports snippets env=production"
     example "kojo dir in -s out -i snippets -a args.yml"
 
-    def run(args)
+    def run
       @opts = args['ARGS'].args_to_hash
       @indir = args['INDIR']
       @outdir = args['--save']
