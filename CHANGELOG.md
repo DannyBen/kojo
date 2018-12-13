@@ -1,5 +1,37 @@
 # Change Log
 
+## [v0.2.6](https://github.com/DannyBen/kojo/tree/v0.2.6) (2018-12-13)
+[Full Changelog](https://github.com/DannyBen/kojo/compare/v0.2.5...v0.2.6)
+
+**Merged pull requests:**
+
+- Adjust to new mister\_bin 0.6.0 [\#19](https://github.com/DannyBen/kojo/pull/19) ([DannyBen](https://github.com/DannyBen))
+
+## [v0.2.5](https://github.com/DannyBen/kojo/tree/v0.2.5) (2018-09-13)
+[Full Changelog](https://github.com/DannyBen/kojo/compare/v0.2.4...v0.2.5)
+
+**Merged pull requests:**
+
+- Gracefully exit on interrupt when getting user input [\#18](https://github.com/DannyBen/kojo/pull/18) ([DannyBen](https://github.com/DannyBen))
+
+## [v0.2.4](https://github.com/DannyBen/kojo/tree/v0.2.4) (2018-09-13)
+[Full Changelog](https://github.com/DannyBen/kojo/compare/v0.2.3...v0.2.4)
+
+**Implemented enhancements:**
+
+- Consider prompting the user for values when variables are missing [\#16](https://github.com/DannyBen/kojo/issues/16)
+
+**Merged pull requests:**
+
+- Prompt for user input when variables are not provided [\#17](https://github.com/DannyBen/kojo/pull/17) ([DannyBen](https://github.com/DannyBen))
+
+## [v0.2.3](https://github.com/DannyBen/kojo/tree/v0.2.3) (2018-09-12)
+[Full Changelog](https://github.com/DannyBen/kojo/compare/v0.2.2...v0.2.3)
+
+**Merged pull requests:**
+
+- Add ability to use variables in filenames [\#15](https://github.com/DannyBen/kojo/pull/15) ([DannyBen](https://github.com/DannyBen))
+
 ## [v0.2.2](https://github.com/DannyBen/kojo/tree/v0.2.2) (2018-08-09)
 [Full Changelog](https://github.com/DannyBen/kojo/compare/v0.2.1...v0.2.2)
 

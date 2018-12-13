@@ -30,4 +30,11 @@ action :examples do
   say_status :done, ''
 end
 
+help   "Generate changelog"
+action :changelog do
+  run 'github_changelog_generator'
+  run "git commit -am 'update changelog' && git push"
+end
+
+
 require './debug.rb' if File.exist? 'debug.rb'
