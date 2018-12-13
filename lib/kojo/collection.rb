@@ -32,7 +32,7 @@ module Kojo
       raise Kojo::NotFoundError, "Directory not found: #{dir}" unless Dir.exist? dir
       raise Kojo::NotFoundError, "Directory is empty: #{dir}" if Dir.empty? dir
 
-      @files = Dir["#{dir}/**/*"].reject { |f| File.directory? f }.sort
+      @files = Dir["#{dir}/**/*"].reject { |f| File.directory? f }
     end
   end
 end
