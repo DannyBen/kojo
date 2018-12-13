@@ -22,7 +22,7 @@ module Kojo::Commands
     example "kojo config config.yml -s output scale=3"
     example "kojo config config.yml -s output --args args.yml"
 
-    def run(args)
+    def run
       @config_file = args['CONFIG']
       @outdir = args['--save']
       @opts = args['ARGS'].args_to_hash

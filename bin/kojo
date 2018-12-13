@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 require 'kojo'
+require 'colsole'
+include Colsole
 
 runner = Kojo::CLI.runner
 

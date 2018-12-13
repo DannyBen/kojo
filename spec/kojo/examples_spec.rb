@@ -5,8 +5,7 @@ describe 'examples' do
 
   it "work" do
     dirs = Dir['examples/*'].select { |f| File.directory? f }
-
-    # dirs = Dir["examples/06*"]
+    # dirs = Dir["examples/dir"]
 
     dirs.each do |example|
       name = File.basename example
