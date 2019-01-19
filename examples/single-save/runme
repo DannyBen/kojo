@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -x
+kojo single Dockerfile --save result version=2.5.3

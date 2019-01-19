@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'bin/kojo-config' do
+describe 'kojo config' do
   subject { CLI.runner }
 
   context "without arguments" do
