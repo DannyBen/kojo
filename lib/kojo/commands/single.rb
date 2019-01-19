@@ -2,7 +2,7 @@ require 'mister_bin'
 
 module Kojo::Commands
   # Handle calls to the +kojo single+ command
-  class SingleCmd < MisterBin::Command
+  class SingleCmd < CommandBase
     attr_reader :opts, :infile, :outdir
 
     help "Transform using a single file that contains the instructions"
@@ -45,14 +45,6 @@ module Kojo::Commands
       template.render opts do |file, output|
         save file, output
       end
-    end
-
-    def save(file, output)
-      outpath = "#{outdir}/#{file}"
-      dir = File.dirname outpath
-      FileUtils.mkdir_p dir unless Dir.exist? dir
-      File.write outpath, output
-      say "Saved #{outpath}"  
     end
   end
 end
