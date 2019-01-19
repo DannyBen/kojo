@@ -1,3 +1,6 @@
+require 'erb'
+require 'ostruct'
+
 class String
   # Convert a string to the most appropriate type
   def to_typed
@@ -17,7 +20,7 @@ class String
   end
 
   def resolve(vars)
-    self % vars
+    self % vars.symbolize_keys
   
   rescue KeyError => e
     print "> #{e.key}: "
@@ -25,7 +28,21 @@ class String
     retry
   end
 
-  private 
+  def eval_vars(args, filename)
+    resolve args.symbolize_keys
+  rescue ArgumentError => e
+    raise Kojo::TemplateError, "#{e.message}\nin: #{filename}"
+  end
+
+  def eval_erb(args, filename)
+    erb self, args
+  rescue RuntimeError => e
+    raise Kojo::TemplateError, "Invalid Ruby code #{e.message}\nin: #{filename}"
+  rescue SyntaxError => e
+    raise Kojo::TemplateError, "#{e.message}\nin: #{filename}"
+  end
+
+private 
 
   def get_user_input
     response = $stdin.gets
@@ -34,4 +51,9 @@ class String
   rescue Interrupt # Ctrl+C
     raise Kojo::Interrupt
   end
+
+  def erb(template, vars)
+    ERB.new(template, nil, '-').result(OpenStruct.new(vars).instance_eval { binding })
+  end
+
 end

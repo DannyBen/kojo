@@ -20,7 +20,7 @@ module Kojo
       end
     end
 
-    private
+  private
 
     def generate_from_file(opts)
       config['output'].each do |target, config_opts|

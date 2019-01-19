@@ -5,7 +5,7 @@ module Kojo::Commands
   class FileCmd < MisterBin::Command
     attr_reader :opts, :outfile, :infile, :import_base
 
-    help "Compile a file from a template"
+    help "Transform a file from a template"
 
     usage "kojo file INFILE [--save FILE --imports DIR --args FILE] [ARGS...]"
     usage "kojo file (-h|--help)"
@@ -14,6 +14,7 @@ module Kojo::Commands
     option "-i --imports DIR", "Specify base directory for @import directives"
     option "-a --args FILE", "Load arguments from YAML file"
 
+    param "INFILE", "Template to transform"
     param "ARGS", "Optional key=value pairs"
 
     example "kojo file main.yml"
@@ -35,6 +36,8 @@ module Kojo::Commands
 
       run!
     end
+
+  private
 
     def run!
       template = Kojo::Template.new infile

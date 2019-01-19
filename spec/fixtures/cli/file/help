@@ -1,4 +1,4 @@
-Compile a file from a template
+Transform a file from a template
 
 Usage:
   kojo file INFILE [--save FILE --imports DIR --args FILE] [ARGS...]
@@ -18,6 +18,9 @@ Options:
     Show this help
 
 Parameters:
+  INFILE
+    Template to transform
+
   ARGS
     Optional key=value pairs
 

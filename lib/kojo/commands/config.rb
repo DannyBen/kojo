@@ -6,7 +6,7 @@ module Kojo::Commands
   class ConfigCmd < MisterBin::Command
     attr_reader :gen, :outdir, :opts, :import_base, :config_file
 
-    help "Generate based on instructions from a config file"
+    help "Transform based on instructions from a config file"
 
     usage "kojo config CONFIG [--save DIR --imports DIR --args FILE] [ARGS...]"
     usage "kojo config (-h|--help)"
@@ -15,6 +15,7 @@ module Kojo::Commands
     option "-i --imports DIR", "Specify base directory for @import directives"
     option "-a --args FILE", "Load arguments from YAML file"
 
+    param "CONFIG", "YAML configuration file"
     param "ARGS", "Optional key=value pairs"
 
     example "kojo config config.yml"
@@ -37,6 +38,8 @@ module Kojo::Commands
       run!
     end
 
+  private
+
     def run!
       config = Kojo::Config.new config_file
       config.import_base = import_base if import_base
@@ -45,8 +48,6 @@ module Kojo::Commands
         handle file, output
       end
     end
-
-    private
 
     def handle(file, output)
       if outdir
