@@ -25,8 +25,9 @@ Table of Contents
 - [Usage](#usage)
   - [Variables](#variables)
   - [Import](#import)
-  - [Compile an Entire Folder](#compile-an-entire-folder)
-  - [One to Many Generation](#one-to-many-generation)
+  - [Transform an Entire Folder](#transform-an-entire-folder)
+  - [Transform One to Many using Config](#transform-one-to-many-using-config)
+  - [Transform One to Many using Front Matter](#transform-one-to-many-using-front-matter)
   - [Conditions and Loops with ERB](#conditions-and-loops-with-erb)
 - [Interactive Mode](#interactive-mode)
 
@@ -85,7 +86,7 @@ The space after `filename` is optional.
 
 
 
-### Compile an Entire Folder
+### Transform an Entire Folder
 
 ![kojo](images/features-dir.svg)
 
@@ -96,7 +97,7 @@ You may use `%{variables}` in filenames.
 
 
 
-### One to Many Generation
+### Transform One to Many using Config
 
 ![kojo](images/features-config.svg)
 
@@ -141,6 +142,27 @@ output:
     argument2: value
 ```
 
+### Transform One to Many using Front Matter
+
+![kojo](images/features-single.svg)
+
+Define a template that contains the instructions on how to transform it as a
+YAML front matter.
+
+The YAML front matter should be structured like this:
+
+```yaml
+filename2:
+  arg: value
+  another_arg: value
+
+filename2:
+  arg: value
+  another_arg: value
+---
+Your template that uses %{arg} goes here
+...
+```
 
 ### Conditions and Loops with ERB
 
