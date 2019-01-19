@@ -29,7 +29,7 @@ describe 'custom exceptions' do
         actual = "#{e.class}\n#{e.message}"
       end
       
-      expect(actual).to match_fixture(expected)
+      expect(actual).to match_fixture(expected).diff(1)
     end
   end
 end
