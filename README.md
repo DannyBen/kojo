@@ -164,6 +164,9 @@ Your template that uses %{arg} goes here
 ...
 ```
 
+Additional arguments provided to the command line, will also be transferred
+to the template.
+
 ### Conditions and Loops with ERB
 
 ![kojo](images/features-erb.svg)
