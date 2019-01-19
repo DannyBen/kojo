@@ -2,10 +2,10 @@ require 'mister_bin'
 
 module Kojo::Commands
   # Handle calls to the +kojo dir+ command
-  class DirCmd < MisterBin::Command
+  class DirCmd < CommandBase
     attr_reader :opts, :indir, :outdir, :import_base
 
-    help "Compile a folder of templates to a similar output folder"
+    help "Transform a folder of templates to a similar output folder"
 
     usage "kojo dir INDIR [--save DIR --imports DIR --args FILE] [ARGS...]"
     usage "kojo dir (-h|--help)"
@@ -14,6 +14,7 @@ module Kojo::Commands
     option "-i --imports DIR", "Specify base directory for @import directives"
     option "-a --args FILE", "Load arguments from YAML file"
 
+    param "INDIR", "Directory containing templates to transform"
     param "ARGS", "Optional key=value pairs"
 
     example "kojo dir indir"
@@ -36,7 +37,7 @@ module Kojo::Commands
       run!
     end
 
-    private
+  private
 
     def run!
       collection = Kojo::Collection.new @indir
@@ -60,14 +61,6 @@ module Kojo::Commands
       collection.render @opts do |file, output|
         save file, output
       end
-    end
-
-    def save(file, output)
-      outpath = "#{outdir}/#{file}"
-      dir = File.dirname outpath
-      FileUtils.mkdir_p dir unless Dir.exist? dir
-      File.write outpath, output
-      say "Saved #{outpath}"  
     end
   end
 end

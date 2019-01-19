@@ -1,4 +1,4 @@
-Compile a folder of templates to a similar output folder
+Transform a folder of templates to a similar output folder
 
 Usage:
   kojo dir INDIR [--save DIR --imports DIR --args FILE] [ARGS...]
@@ -18,6 +18,9 @@ Options:
     Show this help
 
 Parameters:
+  INDIR
+    Directory containing templates to transform
+
   ARGS
     Optional key=value pairs
 

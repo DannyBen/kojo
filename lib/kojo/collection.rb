@@ -16,7 +16,7 @@ module Kojo
       end
     end
 
-    private
+  private
 
     def handle(file, args={})
       template = Template.new file

@@ -10,6 +10,7 @@ module Kojo
       runner.route 'file',   to: Kojo::Commands::FileCmd
       runner.route 'dir',    to: Kojo::Commands::DirCmd
       runner.route 'config', to: Kojo::Commands::ConfigCmd
+      runner.route 'single', to: Kojo::Commands::SingleCmd
 
       runner
     end

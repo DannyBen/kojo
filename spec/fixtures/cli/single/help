@@ -1,0 +1,26 @@
+Transform using a single file that contains the instructions
+
+Usage:
+  kojo single INFILE [--save DIR] [ARGS...]
+  kojo single (-h|--help)
+
+Options:
+  -s --save DIR
+    Save output to directory instead of printing
+
+  -h --help
+    Show this help
+
+Parameters:
+  INFILE
+    Template to transform. The template should contain a YAML front matter with
+    transformation instructions
+
+  ARGS
+    Optional key=value pairs
+
+Examples:
+  kojo single Dockerfile
+  kojo single template.Dockerfile --save .
+  kojo single template.Dockerfile --save output
+  kojo single template.Dockerfile scale=2

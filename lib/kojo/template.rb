@@ -1,6 +1,3 @@
-require 'erb'
-require 'ostruct'
-
 module Kojo
   # The Template class handles a single template file, and processes it for:
   # - Variables (using +%{var}+ syntax)
@@ -22,12 +19,12 @@ module Kojo
       evaluate file
     end
 
-    private
+  protected
 
     def evaluate(file)
       content = read_file file
-      content = eval_erb content
-      content = eval_vars content
+      content = content.eval_erb args, file
+      content = content.eval_vars args, file
       content = eval_imports content
       content
     end
@@ -35,20 +32,6 @@ module Kojo
     def read_file(file)
       raise Kojo::NotFoundError, "File not found: #{file}" unless File.exist? file
       File.read file
-    end
-
-    def eval_vars(content)
-      content.resolve args
-    rescue ArgumentError => e
-      raise Kojo::TemplateError, "#{e.message}\nin: #{file}"
-    end
-
-    def eval_erb(content)
-      erb content, args
-    rescue RuntimeError => e
-      raise Kojo::TemplateError, "Invalid Ruby code #{e.message}\nin: #{file}"
-    rescue SyntaxError => e
-      raise Kojo::TemplateError, "#{e.message}\nin: #{file}"
     end
 
     def eval_imports(content)
@@ -78,13 +61,9 @@ module Kojo
       self.class.new(filename).render(all_args)
     end
 
-    def erb(template, vars)
-      ERB.new(template, nil, '-').result(OpenStruct.new(vars).instance_eval { binding })
-    end
-
     def indent(text, spaces)
       text.lines.collect { |line| "#{' ' * spaces}#{line}" }.join
     end
-  end
 
+  end
 end
