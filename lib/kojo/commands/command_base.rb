@@ -1,3 +1,5 @@
+require 'mister_bin'
+
 module Kojo::Commands
   class CommandBase < MisterBin::Command
     def save(file, output)
