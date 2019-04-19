@@ -31,7 +31,7 @@ describe 'custom exceptions' do
 
       # Bigger difference in this case between RUby 2.6 and 2.5
       # TODO: Improve this you lazy bum...
-      distance = name == :erb_ruby_error ? 30 : 2
+      distance = name == :erb_syntax_error ? 30 : 2
       
       expect(actual).to match_fixture(expected).diff(2)
     end
