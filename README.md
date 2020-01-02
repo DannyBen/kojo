@@ -30,6 +30,7 @@ Table of Contents
   - [Transform One to Many using Front Matter](#transform-one-to-many-using-front-matter)
   - [Conditions and Loops with ERB](#conditions-and-loops-with-erb)
 - [Interactive Mode](#interactive-mode)
+- [Using from Ruby Code](#using-from-ruby-code)
 
 ---
 
@@ -189,4 +190,56 @@ When Kojo encounters a variable that was not supplied (either through the comman
 line or through a configuration file), it will prompt for a value.
 
 ![kojo](images/interactive-mode.gif)
+
+
+
+Using from Ruby Code
+--------------------------------------------------
+
+Although Kojo was primarily designed as a command line utility, you can also
+use it as a library from your Ruby code.
+
+These are the primary classes:
+
+| Class                       | Description                                  | CLI equivalent
+|-----------------------------|----------------------------------------------|---------------
+| `Kojo::Template`            | generate from a single template              | `kojo file`
+| `Kojo::FrontMatterTemplate` | generate from a template with a front matter | `kojo single`
+| `Kojo::Config`              | generate from config file                    | `kojo config`
+| `Kojo::Collection`          | generate from directory                      | `kojo dir`
+
+### Examples
+
+```ruby
+# Template
+template = Kojo::Template.new 'examples/variables/main.yml'
+result = template.render domain: 'example.com', scale: 2
+puts result
+
+# Collection
+collection = Kojo::Collection.new 'examples/dir'
+collection.import_base = 'examples/dir/imports'
+
+params = { env: 'env', app: 'app' }
+result = collection.render params do |path, content|
+  # code to handle results here
+end
+
+# Config
+config = Kojo::Config.new 'examples/config-from-file/config.yml'
+config.import_base = "examples/config-from-file/imports"
+
+config.generate do |path, content|
+  # code to handle results here
+end
+
+# FrontMatterTemplate
+template = Kojo::FrontMatterTemplate.new 'examples/single/Dockerfile'
+params = { version: '0.1.1' }
+
+result = template.render params do |path, content|
+  # code to handle results here
+end
+
+```
 
