@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require 'kojo'
+require 'kojo/cli'
 require 'colsole'
 include Colsole
 

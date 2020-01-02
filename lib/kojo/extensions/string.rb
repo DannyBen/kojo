@@ -1,5 +1,6 @@
 require 'erb'
 require 'ostruct'
+require 'kojo/extensions/hash'
 
 class String
   # Convert a string to the most appropriate type

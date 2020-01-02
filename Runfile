@@ -1,6 +1,7 @@
 require "runfile-tasks"
 require "byebug"
-require_relative 'lib/kojo'
+require 'kojo'
+require 'kojo/version'
 
 title   "Kojo Developer Toolbelt"
 summary "Runfile tasks for building the Kojo gem"

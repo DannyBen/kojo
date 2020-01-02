@@ -1,4 +1,5 @@
 require 'mister_bin'
+requires 'commands'
 
 module Kojo
   # The CLI class is used by the kojo binary and forwards incoming CLI 
