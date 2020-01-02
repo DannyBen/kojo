@@ -3,6 +3,8 @@ require 'mister_bin'
 module Kojo::Commands
   # Handle calls to the +kojo dir+ command
   class DirCmd < CommandBase
+    using Kojo::Refinements
+
     attr_reader :opts, :indir, :outdir, :import_base
 
     help "Transform a folder of templates to a similar output folder"

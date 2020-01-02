@@ -3,6 +3,8 @@ require 'mister_bin'
 module Kojo::Commands
   # Handle calls to the +kojo file+ command
   class FileCmd < MisterBin::Command
+    using Kojo::Refinements
+
     attr_reader :opts, :outfile, :infile, :import_base
 
     help "Transform a file from a template"

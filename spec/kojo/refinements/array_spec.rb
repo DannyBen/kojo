@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Array do
+  using Refinements
+
   subject { %w[scale=2 production=yes app=ninja] }
 
   describe '#args_to_hash' do

@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe String do
+  using Refinements
+  
   describe '#to_typed' do
     it "works with integer" do
       expect("123".to_typed).to eq 123

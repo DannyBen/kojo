@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Hash do
+  using Refinements
+
   describe '#symbolize_keys' do
     subject { {"key" => "val", "anotherkey" => "anotherval"} }
 

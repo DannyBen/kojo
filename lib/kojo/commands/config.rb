@@ -4,6 +4,8 @@ require 'mister_bin'
 module Kojo::Commands
   # Handle calls to the +kojo config+ command
   class ConfigCmd < MisterBin::Command
+    using Kojo::Refinements
+
     attr_reader :gen, :outdir, :opts, :import_base, :config_file
 
     help "Transform based on instructions from a config file"

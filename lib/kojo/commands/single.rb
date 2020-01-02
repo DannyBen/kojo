@@ -3,6 +3,8 @@ require 'mister_bin'
 module Kojo::Commands
   # Handle calls to the +kojo single+ command
   class SingleCmd < CommandBase
+    using Kojo::Refinements
+
     attr_reader :opts, :infile, :outdir
 
     help "Transform using a single file that contains the instructions"

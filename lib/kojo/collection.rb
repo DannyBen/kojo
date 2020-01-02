@@ -2,6 +2,8 @@ module Kojo
   # The Collection class is a wrapper around the {Template} object. It 
   # provides a mechanism for processing an entire directory of templates.
   class Collection
+    using Refinements
+
     attr_reader :dir
     attr_accessor :import_base
 
