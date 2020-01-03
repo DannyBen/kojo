@@ -191,6 +191,14 @@ line or through a configuration file), it will prompt for a value.
 
 ![kojo](images/interactive-mode.gif)
 
+You can enable or disable interactive mode by setting the environment
+variable `KOJO_INTERACTIVE` to `yes` or `no`.
+
+By default, interactivity is enabled when running the CLI, and disabled when
+running from within Ruby code.
+
+When running from within Ruby code, you can also use `Kojo.interactive = true`
+and `Kojo.interactive?` to get the current state.
 
 
 Using from Ruby Code
