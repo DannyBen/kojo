@@ -1,4 +1,5 @@
 require 'mister_bin'
+require 'kojo/version'
 requires 'commands'
 
 module Kojo

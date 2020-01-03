@@ -1,0 +1,3 @@
+> domain: > scale: services:
+  domain: domain.com
+  scale: 2
