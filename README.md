@@ -213,8 +213,8 @@ These are the primary classes:
 |-----------------------------|----------------------------------------------|---------------
 | `Kojo::Template`            | generate from a single template              | `kojo file`
 | `Kojo::FrontMatterTemplate` | generate from a template with a front matter | `kojo single`
-| `Kojo::Config`              | generate from config file                    | `kojo config`
-| `Kojo::Collection`          | generate from directory                      | `kojo dir`
+| `Kojo::Config`              | generate from a config file                  | `kojo config`
+| `Kojo::Collection`          | generate from a directory                    | `kojo dir`
 
 ### Examples
 
