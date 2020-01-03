@@ -4,6 +4,8 @@ module Kojo
   # The Config class handles multiple template generation from a 
   # definitions YAML file.
   class Config
+    using Refinements
+
     attr_reader :config_file, :outdir
     attr_accessor :import_base
 

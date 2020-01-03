@@ -4,6 +4,8 @@ module Kojo
   # The FrontMatterTemplate class handles a single template file, that 
   # contains a YAML front matter.
   class FrontMatterTemplate
+    using Refinements
+
     attr_reader :file, :args, :template
 
     def initialize(file)

@@ -1,65 +1,69 @@
 require 'mister_bin'
 
-module Kojo::Commands
-  # Handle calls to the +kojo dir+ command
-  class DirCmd < CommandBase
-    attr_reader :opts, :indir, :outdir, :import_base
+module Kojo
+  module Commands
+    # Handle calls to the +kojo dir+ command
+    class DirCmd < CommandBase
+      using Kojo::Refinements
 
-    help "Transform a folder of templates to a similar output folder"
+      attr_reader :opts, :indir, :outdir, :import_base
 
-    usage "kojo dir INDIR [--save DIR --imports DIR --args FILE] [ARGS...]"
-    usage "kojo dir (-h|--help)"
+      help "Transform a folder of templates to a similar output folder"
 
-    option "-s --save DIR", "Save output to directory instead of printing"
-    option "-i --imports DIR", "Specify base directory for @import directives"
-    option "-a --args FILE", "Load arguments from YAML file"
+      usage "kojo dir INDIR [--save DIR --imports DIR --args FILE] [ARGS...]"
+      usage "kojo dir (-h|--help)"
 
-    param "INDIR", "Directory containing templates to transform"
-    param "ARGS", "Optional key=value pairs"
+      option "-s --save DIR", "Save output to directory instead of printing"
+      option "-i --imports DIR", "Specify base directory for @import directives"
+      option "-a --args FILE", "Load arguments from YAML file"
 
-    example "kojo dir indir"
-    example "kojo dir in --save out env=production"
-    example "kojo dir in --save out --imports snippets env=production"
-    example "kojo dir in -s out -i snippets -a args.yml"
+      param "INDIR", "Directory containing templates to transform"
+      param "ARGS", "Optional key=value pairs"
 
-    def run
-      @opts = args['ARGS'].args_to_hash
-      @indir = args['INDIR']
-      @outdir = args['--save']
-      @import_base = args['--imports']
-      argfile = args['--args']
+      example "kojo dir indir"
+      example "kojo dir in --save out env=production"
+      example "kojo dir in --save out --imports snippets env=production"
+      example "kojo dir in -s out -i snippets -a args.yml"
 
-      if argfile
-        fileopts = YAML.load_file(argfile).symbolize_keys
-        @opts = fileopts.merge @opts
+      def run
+        @opts = args['ARGS'].args_to_hash
+        @indir = args['INDIR']
+        @outdir = args['--save']
+        @import_base = args['--imports']
+        argfile = args['--args']
+
+        if argfile
+          fileopts = YAML.load_file(argfile).symbolize_keys
+          @opts = fileopts.merge @opts
+        end
+
+        run!
       end
 
-      run!
-    end
+    private
 
-  private
+      def run!
+        collection = Collection.new @indir
+        collection.import_base = import_base if import_base
 
-    def run!
-      collection = Kojo::Collection.new @indir
-      collection.import_base = import_base if import_base
-
-      if outdir
-        write collection
-      else
-        show collection
+        if outdir
+          write collection
+        else
+          show collection
+        end
       end
-    end
 
-    def show(collection)
-      collection.render @opts do |file, output|
-        say "\n!txtgrn!# #{file}"
-        say output
+      def show(collection)
+        collection.render @opts do |file, output|
+          say "\n!txtgrn!# #{file}"
+          say output
+        end
       end
-    end
 
-    def write(collection)
-      collection.render @opts do |file, output|
-        save file, output
+      def write(collection)
+        collection.render @opts do |file, output|
+          save file, output
+        end
       end
     end
   end

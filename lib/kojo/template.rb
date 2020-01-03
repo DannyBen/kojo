@@ -4,6 +4,8 @@ module Kojo
   # - ERB
   # - +@import+ statements
   class Template
+    using Refinements
+
     attr_reader :file, :extension, :dir, :args
     attr_accessor :import_base
 
