@@ -6,6 +6,8 @@ module Kojo
   # commands to the relevant Kojo::Commands class
   class CLI
     def self.runner
+      Kojo.interactive = ENV['KOJO_INTERACTIVE'] != 'no'
+      
       runner = MisterBin::Runner.new version: Kojo::VERSION
 
       runner.route 'file',   to: Kojo::Commands::FileCmd

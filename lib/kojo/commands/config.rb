@@ -43,7 +43,7 @@ module Kojo::Commands
   private
 
     def run!
-      config = Kojo::Config.new config_file
+      config = Config.new config_file
       config.import_base = import_base if import_base
 
       config.generate opts do |file, output|

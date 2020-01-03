@@ -26,6 +26,8 @@ module Kojo
         self % vars.symbolize_keys
       
       rescue KeyError => e
+        raise unless Kojo.interactive?
+
         print "> #{e.key}: "
         vars[e.key] = get_user_input
         retry
