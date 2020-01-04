@@ -253,7 +253,7 @@ end
 
 In addition, Kojo extends Ruby's `File` class with the `File.deep_write`
 method, which lets you write the file and create the directory structure as
-needed. You may use it in code like this:
+needed. You may use it in your code like this:
 
 ```ruby
 # Config
