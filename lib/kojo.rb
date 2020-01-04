@@ -2,6 +2,7 @@ require 'requires'
 require 'byebug' if ENV['BYEBUG']
 
 requires 'kojo/refinements'
+requires 'kojo/extensions'
 
 require 'kojo/exceptions'
 require 'kojo/template'

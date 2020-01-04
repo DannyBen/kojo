@@ -11,6 +11,8 @@ require 'kojo/cli'
 include Kojo
 require_relative 'spec_mixin'
 
+system 'mkdir tmp' unless Dir.exist? 'tmp'
+
 # Consistent Colsole output (for rspec_fixtures)
 ENV['TTY'] = 'on'
 
