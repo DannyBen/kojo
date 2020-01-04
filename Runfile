@@ -33,8 +33,7 @@ end
 
 help   "Generate changelog"
 action :changelog do
-  run 'github_changelog_generator'
-  run "git commit -am 'update changelog' && git push"
+  run 'github_changelog_generator --user DannyBen --project kojo --no-http-cache'
 end
 
 
