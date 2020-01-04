@@ -31,6 +31,7 @@ Table of Contents
   - [Conditions and Loops with ERB](#conditions-and-loops-with-erb)
 - [Interactive Mode](#interactive-mode)
 - [Using from Ruby Code](#using-from-ruby-code)
+- [Contributing / Support](#contributing--support)
 
 ---
 
@@ -248,6 +249,24 @@ params = { version: '0.1.1' }
 result = template.render params do |path, content|
   # code to handle results here
 end
-
 ```
 
+In addition, Kojo extends Ruby's `File` class with the `File.deep_write`
+method, which lets you write the file and create the directory structure as
+needed. You may use it in code like this:
+
+```ruby
+# Config
+config = Kojo::Config.new 'examples/config-from-file/config.yml'
+config.import_base = "examples/config-from-file/imports"
+
+config.generate do |path, content|
+  File.deep_write path, content
+end
+```
+
+Contributing / Support
+--------------------------------------------------
+
+If you experience any issue, have a question or a suggestion, or if you wish
+to contribute, feel free to [open an issue][issues].
