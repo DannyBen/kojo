@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.3.3](https://github.com/DannyBen/kojo/tree/v0.3.3) (2020-01-05)
+
+[Full Changelog](https://github.com/DannyBen/kojo/compare/v0.3.2...v0.3.3)
+
+**Merged pull requests:**
+
+- Fix command errors [\#25](https://github.com/DannyBen/kojo/pull/25) ([DannyBen](https://github.com/DannyBen))
+
 ## [v0.3.2](https://github.com/DannyBen/kojo/tree/v0.3.2) (2020-01-04)
 
 [Full Changelog](https://github.com/DannyBen/kojo/compare/v0.3.1...v0.3.2)
