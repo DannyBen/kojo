@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'custom exceptions' do
-  let(:runner) { CLI.runner }
+  let(:runner) { Kojo::CLI.runner }
   let(:samples) { 'spec/samples/errors' }
   let(:empty_dir) { 'tmp/empty-dir' }
   

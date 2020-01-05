@@ -33,7 +33,7 @@ module Kojo
     private
 
       def run!
-        template = FrontMatterTemplate.new infile
+        template = Kojo::FrontMatterTemplate.new infile
         outdir ? write(template) : show(template)
       end
 

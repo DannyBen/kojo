@@ -43,7 +43,7 @@ module Kojo
     private
 
       def run!
-        collection = Collection.new @indir
+        collection = Kojo::Collection.new @indir
         collection.import_base = import_base if import_base
 
         if outdir

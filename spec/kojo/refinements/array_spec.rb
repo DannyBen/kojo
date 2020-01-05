@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Array do
-  using Refinements
+  using Kojo::Refinements
 
   subject { %w[scale=2 production=yes app=ninja] }
 

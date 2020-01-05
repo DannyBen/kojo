@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'kojo single' do
-  subject { CLI.runner }
+  subject { Kojo::CLI.runner }
 
   context "without arguments" do
     it "shows short usage" do
