@@ -43,7 +43,7 @@ module Kojo
     private
 
       def run!
-        template = Template.new infile
+        template = Kojo::Template.new infile
         template.import_base = import_base if import_base
         output = template.render(opts)
 
