@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe String do
-  using Refinements
+  using Kojo::Refinements
   
   describe '#to_typed' do
     it "works with integer" do

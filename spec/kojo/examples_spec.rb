@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'examples' do
-  subject { CLI.runner }
+  subject { Kojo::CLI.runner }
 
   it "work" do
     dirs = Dir['examples/*'].select { |f| File.directory? f }

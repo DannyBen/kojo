@@ -24,7 +24,7 @@ describe Kojo do
     context "in CLI context" do
       it "defaults to true" do
         expect(subject).not_to be_interactive
-        CLI.runner
+        Kojo::CLI.runner
         expect(subject).to be_interactive
       end
 
@@ -34,7 +34,7 @@ describe Kojo do
         
         it "returns false" do
           expect(subject).not_to be_interactive
-          CLI.runner
+          Kojo::CLI.runner
           expect(subject).not_to be_interactive
         end
       end

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Hash do
-  using Refinements
+  using Kojo::Refinements
 
   describe '#symbolize_keys' do
     subject { {"key" => "val", "anotherkey" => "anotherval"} }
