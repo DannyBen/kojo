@@ -1,6 +1,5 @@
 require 'erb'
 require 'ostruct'
-require 'kojo/refinements/hash'
 
 module Kojo
   module Refinements
