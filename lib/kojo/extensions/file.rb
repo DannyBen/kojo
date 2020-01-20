@@ -1,3 +1,5 @@
+require 'fileutils'
+
 class File
   def self.deep_write(path, content)
     FileUtils.mkdir_p File.dirname(path)

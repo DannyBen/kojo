@@ -14,7 +14,7 @@ module Kojo
       @import_base = nil
     end
 
-    def generate(opts={}, &block)
+    def generate(opts = {}, &block)
       if directory_mode?
         generate_from_dir opts, &block
       else

@@ -12,7 +12,7 @@ module Kojo
       @file = file
     end
 
-    def render(additional_args=nil)
+    def render(additional_args = nil)
       additional_args ||= {}
       config, @template = read_file file
 
@@ -24,7 +24,7 @@ module Kojo
 
   private
 
-    def handle(args={})
+    def handle(args = {})
       content = template
       content = content.eval_erb args, file
       content = content.eval_vars args, file

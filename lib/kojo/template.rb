@@ -16,7 +16,7 @@ module Kojo
       @import_base = dir
     end
 
-    def render(args={})
+    def render(args = {})
       @args = args
       evaluate file
     end
