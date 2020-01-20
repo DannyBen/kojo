@@ -12,15 +12,19 @@ module Kojo
       @import_base = dir
     end
 
-    def render(args={}, &block)
+    def render(args = {}, &block)
       files.each do |file|
         handle file, args, &block
       end
     end
 
+    def size
+      files.size
+    end
+
   private
 
-    def handle(file, args={})
+    def handle(file, args = {})
       template = Template.new file
       template.import_base = import_base
 
