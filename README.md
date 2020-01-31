@@ -6,7 +6,7 @@ Kojo Configuration Ninja
 ==================================================
 
 [![Gem Version](https://badge.fury.io/rb/kojo.svg)](https://badge.fury.io/rb/kojo)
-[![Build Status](https://travis-ci.com/DannyBen/kojo.svg?branch=master)](https://travis-ci.com/DannyBen/kojo)
+[![Build Status](https://github.com/DannyBen/kojo/workflows/Test/badge.svg)](https://github.com/DannyBen/kojo/actions?query=workflow%3ATest)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f24566ad04b5054a2251/maintainability)](https://codeclimate.com/github/DannyBen/kojo/maintainability)
 
 
