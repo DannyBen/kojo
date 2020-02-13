@@ -246,7 +246,7 @@ end
 template = Kojo::FrontMatterTemplate.new 'examples/single/Dockerfile'
 params = { version: '0.1.1' }
 
-result = template.render params do |path, content|
+template.render params do |path, content|
   # code to handle results here
 end
 ```
