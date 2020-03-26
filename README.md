@@ -42,7 +42,7 @@ $ gem install kojo
 Or with Docker:
 
 ```shell
-$ alias menu='docker run --rm -it -v $PWD:/app dannyben/kojo'
+$ alias kojo='docker run --rm -it -v $PWD:/app dannyben/kojo'
 ```
 
 ## Usage
