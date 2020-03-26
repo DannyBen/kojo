@@ -2,8 +2,7 @@
 
 ![kojo](images/kojo.png)
 
-Kojo Configuration Ninja
-==================================================
+# Kojo Configuration Ninja
 
 [![Gem Version](https://badge.fury.io/rb/kojo.svg)](https://badge.fury.io/rb/kojo)
 [![Build Status](https://github.com/DannyBen/kojo/workflows/Test/badge.svg)](https://github.com/DannyBen/kojo/actions?query=workflow%3ATest)
@@ -18,8 +17,7 @@ It is a command line utility, and it works on any text file format.
 
 ---
 
-Table of Contents
---------------------------------------------------
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -35,20 +33,23 @@ Table of Contents
 
 ---
 
-Installation
---------------------------------------------------
+## Installation
 
-    $ gem install kojo
+```shell
+$ gem install kojo
+```
 
+Or with Docker:
 
+```shell
+$ alias menu='docker run --rm -it -v $PWD:/app dannyben/kojo'
+```
 
-Usage
---------------------------------------------------
+## Usage
 
 If you prefer to learn by example, see the [examples](examples#examples) folder for 
 several use cases. Each example subfolder contains the command to run, the 
 relevant files, and the expected output.
-
 
 ### Variables
 
@@ -62,8 +63,6 @@ Include variables in your configuration templates by using this syntax:
   a value](#interactive-mode).
 - Variables from the top level will be forwarded downstream, and aggregated 
   with any additional variables that are defined in subsequent `@imports`.
-
-
 
 ### Import
 
@@ -86,8 +85,6 @@ resulting configuration file.
 
 The space after `filename` is optional.
 
-
-
 ### Transform an Entire Folder
 
 ![kojo](images/features-dir.svg)
@@ -96,8 +93,6 @@ Process a folder containing templates and `@imports`, and generate a mirror
 output folder, with all the variables and `@imports` evaluated.
 
 You may use `%{variables}` in filenames.
-
-
 
 ### Transform One to Many using Config
 
@@ -182,10 +177,7 @@ Use this syntax for ruby code:
 <%- ruby code here -%>     # for code that should not be printed
 <%= ruby code here -%>     # for code that should be printed
 ```
-
-
-Interactive Mode
---------------------------------------------------
+## Interactive Mode
 
 When Kojo encounters a variable that was not supplied (either through the command 
 line or through a configuration file), it will prompt for a value.
@@ -201,21 +193,19 @@ running from within Ruby code.
 When running from within Ruby code, you can also use `Kojo.interactive = true`
 and `Kojo.interactive?` to get the current state.
 
-
-Using from Ruby Code
---------------------------------------------------
+## Using from Ruby Code
 
 Although Kojo was primarily designed as a command line utility, you can also
 use it as a library from your Ruby code.
 
 These are the primary classes:
 
-| Class                       | Description                                  | CLI equivalent
-|-----------------------------|----------------------------------------------|---------------
-| `Kojo::Template`            | generate from a single template              | `kojo file`
-| `Kojo::FrontMatterTemplate` | generate from a template with a front matter | `kojo single`
-| `Kojo::Config`              | generate from a config file                  | `kojo config`
-| `Kojo::Collection`          | generate from a directory                    | `kojo dir`
+| Class                       | Description                                  | CLI equivalent |
+| --------------------------- | -------------------------------------------- | -------------- |
+| `Kojo::Template`            | generate from a single template              | `kojo file`    |
+| `Kojo::FrontMatterTemplate` | generate from a template with a front matter | `kojo single`  |
+| `Kojo::Config`              | generate from a config file                  | `kojo config`  |
+| `Kojo::Collection`          | generate from a directory                    | `kojo dir`     |
 
 ### Examples
 
@@ -265,8 +255,7 @@ config.generate do |path, content|
 end
 ```
 
-Contributing / Support
---------------------------------------------------
+## Contributing / Support
 
 If you experience any issue, have a question or a suggestion, or if you wish
 to contribute, feel free to [open an issue][issues].
