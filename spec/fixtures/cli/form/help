@@ -1,0 +1,20 @@
+Fill a template form interactively
+
+Usage:
+  kojo form INFILE [--save FILE]
+  kojo form (-h|--help)
+
+Options:
+  -s --save FILE
+    Save to file instead of printing
+
+  -h --help
+    Show this help
+
+Parameters:
+  INFILE
+    ERBX template to transform
+
+Examples:
+  kojo form report.md
+  kojo form report.md --save output.md

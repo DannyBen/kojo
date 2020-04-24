@@ -14,11 +14,13 @@ module SpecMixin
 
   def supress_output
     original_stdout = $stdout
-    $stdout = StringIO.new
+    output = StringIO.new
+    $stdout = output
     begin
       yield
     ensure
       $stdout = original_stdout
     end
+    output.string
   end
 end

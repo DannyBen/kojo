@@ -27,7 +27,7 @@ It is a command line utility, and it works on any text file format.
   - [Transform One to Many using Config](#transform-one-to-many-using-config)
   - [Transform One to Many using Front Matter](#transform-one-to-many-using-front-matter)
   - [Conditions and Loops with ERB](#conditions-and-loops-with-erb)
-- [Interactive Mode](#interactive-mode)
+- [Interactive Fallback](#interactive-fallback)
 - [Using from Ruby Code](#using-from-ruby-code)
 - [Contributing / Support](#contributing--support)
 
@@ -177,7 +177,7 @@ Use this syntax for ruby code:
 <%- ruby code here -%>     # for code that should not be printed
 <%= ruby code here -%>     # for code that should be printed
 ```
-## Interactive Mode
+## Interactive Fallback
 
 When Kojo encounters a variable that was not supplied (either through the command 
 line or through a configuration file), it will prompt for a value.

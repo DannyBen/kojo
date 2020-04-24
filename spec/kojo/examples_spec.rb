@@ -4,7 +4,7 @@ describe 'examples' do
   subject { Kojo::CLI.runner }
 
   it "work" do
-    dirs = Dir['examples/*'].select { |f| File.directory? f }
+    dirs = Dir['examples/*'].select { |f| File.directory?(f) and File.exist?("#{f}/runme") }
     # dirs = Dir["examples/dir"]
 
     dirs.each do |example|
