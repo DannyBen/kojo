@@ -38,7 +38,7 @@ Index
 9. [One to Many](save-to-folder-config)  
    Showing how to generate multiple files from a single source template using `kojo config`.
 10. [Cascading Variables](cascading-variables)  
-   Showing how variables are forwarded from top to bottom.
+    Showing how variables are forwarded from top to bottom.
 11. [Compile Directory](dir)  
     Showing how to compile a directory of templates and create a similar output directory using `kojo dir`.
 12. [Compile Directory and Save](dir-save)  
@@ -51,3 +51,5 @@ Index
     Showing how to provide arguments from a file to `kojo dir`.
 16. [ERB](erb)  
     Showing how to use ERB for conditional output.
+17. [Interactive Form Templates](form)  
+    Showing how to use ERB/ERBX templates with built in interactivity prompt.

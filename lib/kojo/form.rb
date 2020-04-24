@@ -33,11 +33,6 @@ module Kojo
       @prompt ||= TTY::Prompt.new
     end
 
-    # We need this since it is not captured by `mthod_missing`.
-    def select(*args, &block)
-      prompt.select *args, &block
-    end
-
     def method_missing(method_name, *args, &block)
       if respond_to? method_name
         prompt.send method_name, *args, *block
@@ -49,6 +44,18 @@ module Kojo
     def respond_to?(method_name, include_private = false)
       prompt.respond_to?(method_name) || super
     end
+
+    # Below are TTY::Prompt functions that are not captured by the 
+    # `mthod_missing`, so we specify them explicitly
+
+    def select(*args, &block)
+      prompt.select *args, &block
+    end
+
+    def warn(*args, &block)
+      prompt.warn *args, &block
+    end
+
 
   end
 end
