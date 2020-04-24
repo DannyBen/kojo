@@ -1,14 +1,14 @@
 
-[0;32m# small-app.yml
-[0mversion: '3'
+# small-app.yml
+version: '3'
 
 services:
   name: one
   domain: one.ninja.com
   scale: 1
 
-[0;32m# big-app.yml
-[0mversion: '3'
+# big-app.yml
+version: '3'
 
 services:
   name: two

@@ -1,6 +1,6 @@
 
-[0;32m# prod.Dockerfile
-[0mFROM ruby:2.5.3
+# prod.Dockerfile
+FROM ruby:2.5.3
 ENV RAILS_ENV production
 RUN apt install bash curl postgres
 EXPOSE 80
@@ -8,8 +8,8 @@ ENTRYPOINT prod.sh
 
 
 
-[0;32m# dev.Dockerfile
-[0mFROM ruby:2.5.3
+# dev.Dockerfile
+FROM ruby:2.5.3
 ENV RAILS_ENV development
 RUN apt install bash curl sqlite
 EXPOSE 3000

@@ -1,6 +1,6 @@
 
-[0;32m# hello-deployment.yml
-[0mmetadata:
+# hello-deployment.yml
+metadata:
   name: hello
   namespace: production
 

@@ -1,6 +1,6 @@
 Commands:
-  [1;32mfile    [0mTransform a file from a template
-  [1;32mdir     [0mTransform a folder of templates to a similar output folder
-  [1;32mconfig  [0mTransform based on instructions from a config file
-  [1;32msingle  [0mTransform using a single file that contains the instructions
-  [1;32mform    [0mFill a template form interactively
+  file    Transform a file from a template
+  dir     Transform a folder of templates to a similar output folder
+  config  Transform based on instructions from a config file
+  single  Transform using a single file that contains the instructions
+  form    Fill a template form interactively
