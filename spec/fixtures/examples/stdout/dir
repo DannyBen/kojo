@@ -1,10 +1,10 @@
 
-[0;32m# config/database.yml
-[0mproduction:
+# config/database.yml
+production:
   database: rails_hello
 
-[0;32m# docker-compose.yml
-[0mservices:
+# docker-compose.yml
+services:
   db:
     image: postgres
 
@@ -13,5 +13,5 @@
     environment:
     - ENVIRONMENT=production
 
-[0;32m# taskfile
-[0mweb: puma --env production
+# taskfile
+web: puma --env production

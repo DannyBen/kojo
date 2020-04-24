@@ -9,6 +9,7 @@ require 'kojo/template'
 require 'kojo/collection'
 require 'kojo/config'
 require 'kojo/front_matter_template'
+require 'kojo/form'
 
 module Kojo
   class << self

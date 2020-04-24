@@ -17,4 +17,5 @@ ENV['TTY'] = 'on'
 
 RSpec.configure do |c|
   c.include SpecMixin
+  c.strip_ansi_escape = true
 end

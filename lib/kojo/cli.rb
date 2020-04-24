@@ -15,6 +15,7 @@ module Kojo
       runner.route 'dir',    to: Kojo::Commands::DirCmd
       runner.route 'config', to: Kojo::Commands::ConfigCmd
       runner.route 'single', to: Kojo::Commands::SingleCmd
+      runner.route 'form',   to: Kojo::Commands::FormCmd
 
       runner
     end

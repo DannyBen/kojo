@@ -26,8 +26,9 @@ It is a command line utility, and it works on any text file format.
   - [Transform an Entire Folder](#transform-an-entire-folder)
   - [Transform One to Many using Config](#transform-one-to-many-using-config)
   - [Transform One to Many using Front Matter](#transform-one-to-many-using-front-matter)
+  - [Interactive Form Templates](#interactive-form-templates)
   - [Conditions and Loops with ERB](#conditions-and-loops-with-erb)
-- [Interactive Mode](#interactive-mode)
+- [Interactive Fallback](#interactive-fallback)
 - [Using from Ruby Code](#using-from-ruby-code)
 - [Contributing / Support](#contributing--support)
 
@@ -164,6 +165,20 @@ Your template that uses %{arg} goes here
 Additional arguments provided to the command line, will also be transferred
 to the template.
 
+### Interactive Form Templates
+
+![kojo](images/features-form.svg)
+
+Using the `kojo form` command lets you define an ERB or [ERBX][erbx] template, and include interactive prompts to enter the input. 
+
+1. Use either ERB tags (`<%= %>`, `<%- -%>`) or ERBX tags (`{{ }}`, `(( ))`).
+2. Use the built in `prompt` object, which is a [TTY::Prompt](tty-prompt) instance, to prompt for input when running the command (for example: `{{ prompt.ask? "Your Name?" }}`)
+3. Any unidentified ruby command will be forwarded to the `prompt` object, so `prompt.ask` is the same as just using `ask`.
+4. If there is a file with the same name as the template, and with an `.rb` extension (for example `form.md` and `form.md.rb`), then the ruby file will be loaded into the ERB template as if it was written inside it.
+5. If you prefer using a single template file (without the ruby appendix), you can simply use regular ERB/ERBX tags, like demonstrated below.
+
+![kojo](images/features-form-inline.svg)
+
 ### Conditions and Loops with ERB
 
 ![kojo](images/features-erb.svg)
@@ -177,7 +192,7 @@ Use this syntax for ruby code:
 <%- ruby code here -%>     # for code that should not be printed
 <%= ruby code here -%>     # for code that should be printed
 ```
-## Interactive Mode
+## Interactive Fallback
 
 When Kojo encounters a variable that was not supplied (either through the command 
 line or through a configuration file), it will prompt for a value.
@@ -206,6 +221,7 @@ These are the primary classes:
 | `Kojo::FrontMatterTemplate` | generate from a template with a front matter | `kojo single`  |
 | `Kojo::Config`              | generate from a config file                  | `kojo config`  |
 | `Kojo::Collection`          | generate from a directory                    | `kojo dir`     |
+| `Kojo::Form`                | generate interactively                       | `kojo form`    |
 
 ### Examples
 
@@ -239,6 +255,10 @@ params = { version: '0.1.1' }
 template.render params do |path, content|
   # code to handle results here
 end
+
+# Form
+template = Kojo::Form.new 'examples/form/movie.md'
+puts template.render
 ```
 
 In addition, Kojo extends Ruby's `File` class with the `File.deep_write`
@@ -263,3 +283,5 @@ to contribute, feel free to [open an issue][issues].
 ---
 
 [issues]: https://github.com/DannyBen/kojo/issues
+[erbx]: https://github.com/DannyBen/erbx
+[tty-prompt]: https://github.com/piotrmurach/tty-prompt#contents
