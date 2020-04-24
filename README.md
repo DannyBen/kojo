@@ -221,6 +221,7 @@ These are the primary classes:
 | `Kojo::FrontMatterTemplate` | generate from a template with a front matter | `kojo single`  |
 | `Kojo::Config`              | generate from a config file                  | `kojo config`  |
 | `Kojo::Collection`          | generate from a directory                    | `kojo dir`     |
+| `Kojo::Form`                | generate interactively                       | `kojo form`    |
 
 ### Examples
 
@@ -254,6 +255,10 @@ params = { version: '0.1.1' }
 template.render params do |path, content|
   # code to handle results here
 end
+
+# Form
+template = Kojo::Form.new 'examples/form/movie.md'
+puts template.render
 ```
 
 In addition, Kojo extends Ruby's `File` class with the `File.deep_write`
@@ -279,5 +284,4 @@ to contribute, feel free to [open an issue][issues].
 
 [issues]: https://github.com/DannyBen/kojo/issues
 [erbx]: https://github.com/DannyBen/erbx
-
 [tty-prompt]: https://github.com/piotrmurach/tty-prompt#contents
