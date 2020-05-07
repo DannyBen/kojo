@@ -19,7 +19,7 @@ describe 'kojo form' do
     it "prompts the user for input and prints the template" do
       output = supress_output do
         send_input "Bob", "", "y", "", "n" do
-          subject.run %w[form examples/form/movie.md]
+          subject.run %w[form spec/samples/form/movie.md]
         end
       end
 
@@ -35,7 +35,7 @@ describe 'kojo form' do
     it "prompts the user for input and saves the template" do
       supress_output do
         send_input "Bob", "", "y", "", "n" do
-          subject.run %w[form examples/form/movie.md --save tmp/form.md]
+          subject.run %w[form spec/samples/form/movie.md --save tmp/form.md]
         end
       end
 

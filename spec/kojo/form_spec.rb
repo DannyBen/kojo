@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Kojo::Form do
-  subject { described_class.new 'examples/form/movie.md' }
+  subject { described_class.new 'spec/samples/form/movie.md' }
 
   describe '#render' do
     it "prompts the user for values" do

@@ -14,6 +14,8 @@ system 'mkdir tmp' unless Dir.exist? 'tmp'
 
 # Consistent Colsole output (for rspec_fixtures)
 ENV['TTY'] = 'on'
+ENV['COLUMNS'] = '80'
+ENV['LINES'] = '30'
 
 RSpec.configure do |c|
   c.include SpecMixin
