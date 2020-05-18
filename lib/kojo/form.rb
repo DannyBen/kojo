@@ -33,9 +33,9 @@ module Kojo
       @prompt ||= TTY::Prompt.new
     end
 
-    def method_missing(method_name, *args, &block)
+    def method_missing(method_name, *args, **kargs, &block)
       if respond_to? method_name
-        prompt.send method_name, *args, *block
+        prompt.send method_name, *args, **kargs, &block
       else
         super
       end
@@ -55,7 +55,6 @@ module Kojo
     def warn(*args, &block)
       prompt.warn *args, &block
     end
-
 
   end
 end
