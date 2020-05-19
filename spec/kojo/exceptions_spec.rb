@@ -33,7 +33,7 @@ describe 'custom exceptions' do
       # TODO: Improve this you lazy bum...
       distance = name == :erb_syntax_error ? 30 : 2
       
-      expect(actual).to match_fixture(expected).diff(distance)
+      expect(actual).to match_approval(expected).diff(distance)
     end
   end
 end

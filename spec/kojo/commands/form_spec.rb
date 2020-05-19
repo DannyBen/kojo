@@ -5,13 +5,13 @@ describe 'kojo form' do
 
   context "without arguments" do
     it "shows short usage" do
-      expect{ subject.run %w[form]}.to output_fixture('cli/form/usage')
+      expect{ subject.run %w[form]}.to output_approval('cli/form/usage')
     end
   end
 
   context "with --help" do
     it "shows long usage" do
-      expect{ subject.run %w[form --help] }.to output_fixture('cli/form/help')
+      expect{ subject.run %w[form --help] }.to output_approval('cli/form/help')
     end
   end
 
@@ -23,7 +23,7 @@ describe 'kojo form' do
         end
       end
 
-      expect(output).to match_fixture 'form-with-menu'
+      expect(output).to match_approval 'form-with-menu'
     end
   end
 
@@ -39,7 +39,7 @@ describe 'kojo form' do
         end
       end
 
-      expect(File.read 'tmp/form.md').to match_fixture 'form'
+      expect(File.read 'tmp/form.md').to match_approval 'form'
     end
   end
 end

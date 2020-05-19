@@ -17,7 +17,7 @@ describe 'examples' do
         cmd = `tail -n1 runme`
         args = cmd.split ' '
         args.shift
-        expect{ subject.run args }.to output_fixture("examples/stdout/#{name}")
+        expect{ subject.run args }.to output_approval("examples/stdout/#{name}")
       end
 
       result_file = "#{example}/result.yml"
@@ -25,7 +25,7 @@ describe 'examples' do
 
       if File.exist? result_file
         puts "    > Verifying result file"
-        expect(File.read result_file).to match_fixture("examples/results/#{name}")
+        expect(File.read result_file).to match_approval("examples/results/#{name}")
       end
 
       if Dir.exist? result_dir
@@ -33,7 +33,7 @@ describe 'examples' do
         files = Dir["#{result_dir}/**/*"].reject { |f| File.directory? f }
         files.each do |file|
           puts "    > Verifying #{file}"
-          expect(File.read file).to match_fixture("examples/results/#{file}")
+          expect(File.read file).to match_approval("examples/results/#{file}")
         end
       end
     end

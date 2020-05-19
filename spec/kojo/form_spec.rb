@@ -21,7 +21,7 @@ describe Kojo::Form do
         end
       end
 
-      expect(result).to match_fixture 'form'
+      expect(result).to match_approval 'form'
     end
   end
 

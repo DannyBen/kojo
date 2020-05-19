@@ -5,13 +5,13 @@ describe 'kojo file' do
 
   context "without arguments" do
     it "shows short usage" do
-      expect{ subject.run %w[file]}.to output_fixture('cli/file/usage')
+      expect{ subject.run %w[file]}.to output_approval('cli/file/usage')
     end
   end
 
   context "with --help" do
     it "shows long usage" do
-      expect{ subject.run %w[file --help] }.to output_fixture('cli/file/help')
+      expect{ subject.run %w[file --help] }.to output_approval('cli/file/help')
     end
   end
 end

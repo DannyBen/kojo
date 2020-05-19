@@ -5,13 +5,13 @@ describe 'kojo dir' do
 
   context "without arguments" do
     it "shows short usage" do
-      expect{ subject.run %w[dir]}.to output_fixture('cli/dir/usage')
+      expect{ subject.run %w[dir]}.to output_approval('cli/dir/usage')
     end
   end
 
   context "with --help" do
     it "shows long usage" do
-      expect{ subject.run %w[dir --help] }.to output_fixture('cli/dir/help')
+      expect{ subject.run %w[dir --help] }.to output_approval('cli/dir/help')
     end
   end
 end
