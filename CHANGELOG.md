@@ -1,5 +1,41 @@
 # Changelog
 
+## [v0.3.6](https://github.com/DannyBen/kojo/tree/v0.3.6) (2020-05-18)
+
+[Full Changelog](https://github.com/DannyBen/kojo/compare/latest...v0.3.6)
+
+## [latest](https://github.com/DannyBen/kojo/tree/latest) (2020-05-18)
+
+[Full Changelog](https://github.com/DannyBen/kojo/compare/v0.3.7...latest)
+
+## [v0.3.7](https://github.com/DannyBen/kojo/tree/v0.3.7) (2020-05-18)
+
+[Full Changelog](https://github.com/DannyBen/kojo/compare/v0.3.5...v0.3.7)
+
+**Merged pull requests:**
+
+- Fix kwargs warnings for ruby 2.7 [\#32](https://github.com/DannyBen/kojo/pull/32) ([DannyBen](https://github.com/DannyBen))
+- Support older rubies and improve tty-prompt support [\#31](https://github.com/DannyBen/kojo/pull/31) ([DannyBen](https://github.com/DannyBen))
+- Add kojo form command [\#30](https://github.com/DannyBen/kojo/pull/30) ([DannyBen](https://github.com/DannyBen))
+
+## [v0.3.5](https://github.com/DannyBen/kojo/tree/v0.3.5) (2020-03-26)
+
+[Full Changelog](https://github.com/DannyBen/kojo/compare/v0.3.4...v0.3.5)
+
+**Merged pull requests:**
+
+- Update files collection to include dotfiles [\#29](https://github.com/DannyBen/kojo/pull/29) ([DannyBen](https://github.com/DannyBen))
+- Switch to github actions [\#28](https://github.com/DannyBen/kojo/pull/28) ([DannyBen](https://github.com/DannyBen))
+
+## [v0.3.4](https://github.com/DannyBen/kojo/tree/v0.3.4) (2020-01-20)
+
+[Full Changelog](https://github.com/DannyBen/kojo/compare/v0.3.3...v0.3.4)
+
+**Merged pull requests:**
+
+- Maintenance update [\#27](https://github.com/DannyBen/kojo/pull/27) ([DannyBen](https://github.com/DannyBen))
+- Resolve ruby warnings [\#26](https://github.com/DannyBen/kojo/pull/26) ([DannyBen](https://github.com/DannyBen))
+
 ## [v0.3.3](https://github.com/DannyBen/kojo/tree/v0.3.3) (2020-01-05)
 
 [Full Changelog](https://github.com/DannyBen/kojo/compare/v0.3.2...v0.3.3)

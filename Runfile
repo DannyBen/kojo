@@ -9,6 +9,7 @@ version Kojo::VERSION
 
 RunfileTasks::RubyGems.all 'kojo'
 RunfileTasks::Testing.rspec
+RunfileTasks::Changelog.generator 'DannyBen/kojo'
 
 help   "Run interactive console"
 action :console, :c do
@@ -30,11 +31,5 @@ action :examples do
   end
   say_status :done, ''
 end
-
-help   "Generate changelog"
-action :changelog do
-  run 'github_changelog_generator --user DannyBen --project kojo --no-http-cache'
-end
-
 
 require './debug.rb' if File.exist? 'debug.rb'
