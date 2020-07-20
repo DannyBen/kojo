@@ -1,27 +1,17 @@
 require 'spec_helper'
 
-describe Kojo::Form do
+describe Kojo::Form, :tty do
   subject { described_class.new 'spec/samples/form/movie.md' }
 
   describe '#render' do
-    it "prompts the user for values" do
-      expected = /Your Name.*Bob.*Genre.*Action.*snacks.*Yes.*Snack.*Popcorn/m
+    it "prompts for values and returns the evaluated template" do
+      ask "Bob"
+      select "Action"
+      yes? true
+      select "Pizza"
+      yes? false
 
-      send_input "Bob", "", "y", "", "n" do
-        expect { subject.render }.to output(expected).to_stdout
-      end
-    end
-
-    it "renders the template properly" do
-      result = nil
-      
-      supress_output do
-        send_input "Bob", "", "y", "", "n" do
-          result = subject.render
-        end
-      end
-
-      expect(result).to match_approval 'form'
+      expect(subject.render).to match_approval 'form'
     end
   end
 
@@ -41,15 +31,11 @@ describe Kojo::Form do
     end
 
     context "with positional args and keyword args" do
-      it "works" do
-        result = nil
+      let(:args) { ["Choose your destiny?", %w(Scorpion Kano Jax), cycle: true] }
 
-        supress_output do
-          send_input "" do
-            expect { subject.select("Choose your destiny?", %w(Scorpion Kano Jax), cycle: true) }
-              .to output(/Choose your destiny/).to_stdout
-          end
-        end
+      it "works" do
+        expect(subject.prompt).to receive(:select).with(*args).and_return("Jax")
+        subject.select *args
       end
     end
 

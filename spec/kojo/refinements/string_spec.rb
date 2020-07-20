@@ -40,21 +40,19 @@ describe String do
     end
 
     context "when the hash does not contain the needed variable" do
-      context "when Kojo.interactive? is true" do
+      context "when Kojo.interactive? is true", :tty do
         before { Kojo.interactive = true }
         after  { Kojo.interactive = nil }
 
         it "prompts the user for input" do 
-          send_input "bob" do
-            expect { subject.resolve({}) }.to output('> name: ').to_stdout
-          end
+          stdin "bob"
+          expect { subject.resolve({}) }.to output('> name: ').to_stdout
         end
 
         it "uses the users input as the value" do
           supress_output do
-            send_input "bob" do
-              expect(subject.resolve({})).to eq "hello bob"
-            end
+            stdin "bob"
+            expect(subject.resolve({})).to eq "hello bob"
           end
         end
 
@@ -73,7 +71,7 @@ describe String do
         after  { Kojo.interactive = nil }
 
         it "raises an exception" do 
-          expect {subject.resolve({}) }.to raise_error(KeyError, "key{name} not found")
+          expect { subject.resolve({}) }.to raise_error(KeyError, "key{name} not found")
         end
       end
 
