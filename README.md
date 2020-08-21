@@ -10,8 +10,8 @@
 
 
 Kojo helps you generate configuration files from templates, using variables 
-and definition files.  
-It is a command line utility, and it works on any text file format.
+and definition files. It is a command line utility, and works on any text file
+format.
 
 </div>
 
