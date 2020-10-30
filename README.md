@@ -26,6 +26,7 @@ format.
   - [Transform an Entire Folder](#transform-an-entire-folder)
   - [Transform One to Many using Config](#transform-one-to-many-using-config)
   - [Transform One to Many using Front Matter](#transform-one-to-many-using-front-matter)
+  - [Convert YAML to JSON](#convert-yaml-to-json)
   - [Interactive Form Templates](#interactive-form-templates)
   - [Conditions and Loops with ERB](#conditions-and-loops-with-erb)
 - [Interactive Fallback](#interactive-fallback)
@@ -164,6 +165,19 @@ Your template that uses %{arg} goes here
 
 Additional arguments provided to the command line, will also be transferred
 to the template.
+
+### Convert YAML to JSON
+
+![kojo](images/features-tojson.svg)
+
+Convert one or more YAML files to JSON.
+
+This can be useful when you require JSON files as output, but wish to edit
+(or generate using Kojo) using the less error-prone and more aesthetically
+pleasing YAML format.
+
+Note that this Kojo command does not provide any additional preprocessing - the
+input files should be valid YAML.
 
 ### Interactive Form Templates
 
