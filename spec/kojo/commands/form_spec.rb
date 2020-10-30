@@ -22,19 +22,19 @@ describe Kojo::Commands::FormCmd do
     context "INFILE" do
       let(:args) { ['form', infile] }
 
-      it "delegates the INFILE to Kojo::Form", :focus do
+      it "delegates the INFILE to Kojo::Form" do
         expect(Kojo::Form).to receive(:new).with(infile).and_return(template)
         expect(template).to receive(:render)
         subject.execute args
       end
     end
 
-    context "INFILE --save FILE", :focus do
+    context "INFILE --save FILE" do
       let(:outfile) { 'tmp/form.md' }
       let(:args) { %W[form #{infile} --save #{outfile}] }
       before { File.delete outfile if File.exist? outfile }
 
-      it "prompts the user for input and saves the template" do
+      it "prompts the user for input and saves the template", :focus do
         expect(Kojo::Form).to receive(:new).with(infile).and_return(template)
         expect(template).to receive(:render).and_return('rendered')
         expect { subject.execute args }.to output("Saved #{outfile}\n").to_stdout

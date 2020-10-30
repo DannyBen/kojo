@@ -24,8 +24,7 @@ module Kojo
         template = Kojo::Form.new infile
         
         if outfile
-          File.deep_write outfile, template.render
-          say "Saved #{outfile}"  
+          save outfile, template.render
         else
           puts template.render 
         end

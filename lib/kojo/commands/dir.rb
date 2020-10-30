@@ -62,7 +62,7 @@ module Kojo
 
       def write(collection)
         collection.render @opts do |file, output|
-          save file, output
+          save "#{outdir}/#{file}", output
         end
       end
     end

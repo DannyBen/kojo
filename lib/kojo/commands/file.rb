@@ -3,7 +3,7 @@ require 'mister_bin'
 module Kojo
   module Commands
     # Handle calls to the +kojo file+ command
-    class FileCmd < MisterBin::Command
+    class FileCmd < CommandBase
       using Kojo::Refinements
 
       attr_reader :opts, :outfile, :infile, :import_base
@@ -48,8 +48,7 @@ module Kojo
         output = template.render(opts)
 
         if outfile
-          File.write outfile, output
-          say "Saved #{outfile}"
+          save outfile, output
         else
           puts output
         end

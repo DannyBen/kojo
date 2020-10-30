@@ -3,7 +3,7 @@ require 'mister_bin'
 
 module Kojo::Commands
   # Handle calls to the +kojo config+ command
-  class ConfigCmd < MisterBin::Command
+  class ConfigCmd < CommandBase
     using Kojo::Refinements
 
     attr_reader :gen, :outdir, :opts, :import_base, :config_file
@@ -59,13 +59,5 @@ module Kojo::Commands
         say output
       end
     end
-
-    def save(path, output)
-      dir = File.dirname path
-      FileUtils.mkdir_p dir unless Dir.exist? dir
-      File.write path, output
-      say "Saved #{path}"
-    end
-
   end
 end
