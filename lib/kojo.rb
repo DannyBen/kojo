@@ -1,6 +1,9 @@
 require 'requires'
 require 'byebug' if ENV['BYEBUG']
 
+require 'yaml'
+require 'json'
+
 requires 'kojo/refinements'
 requires 'kojo/extensions'
 

@@ -1,5 +1,3 @@
-require 'yaml'
-
 module Kojo
   # The FrontMatterTemplate class handles a single template file, that 
   # contains a YAML front matter.
