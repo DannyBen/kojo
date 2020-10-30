@@ -1,0 +1,26 @@
+Convert one or more YAML files to JSON
+
+Usage:
+  kojo tojson INPUT... [(--save | --replace)]
+  kojo tojson (-h|--help)
+
+Options:
+  -s --save
+    Save each input file in the same directory
+
+  -r --replace
+    Save each input file in the same directory and delete the input file
+
+  -h --help
+    Show this help
+
+Parameters:
+  INPUT
+    Path to a YAML file or multiple files using a glob pattern
+
+Examples:
+  kojo tojson myfile.yaml
+  kojo tojson myfile.yaml --save
+  kojo tojson indir/*.yaml
+  kojo tojson indir/*.yaml --replace
+  kojo tojson indir/**/*.yml

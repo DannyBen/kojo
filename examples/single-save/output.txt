@@ -1,0 +1,3 @@
++ kojo single Dockerfile --save result version=2.5.3
+Saved result/prod.Dockerfile
+Saved result/dev.Dockerfile

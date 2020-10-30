@@ -1,0 +1,3 @@
+Usage:
+  kojo tojson INPUT... [(--save | --replace)]
+  kojo tojson (-h|--help)

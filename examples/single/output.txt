@@ -1,0 +1,19 @@
++ kojo single Dockerfile version=2.5.3
+
+# prod.Dockerfile
+FROM ruby:2.5.3
+ENV RAILS_ENV production
+RUN apt install bash curl postgres
+EXPOSE 80
+ENTRYPOINT prod.sh
+
+
+
+# dev.Dockerfile
+FROM ruby:2.5.3
+ENV RAILS_ENV development
+RUN apt install bash curl sqlite
+EXPOSE 3000
+ENTRYPOINT puma -b 0.0.0.0
+
+

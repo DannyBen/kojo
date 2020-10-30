@@ -16,6 +16,7 @@ module Kojo
       runner.route 'config', to: Kojo::Commands::ConfigCmd
       runner.route 'single', to: Kojo::Commands::SingleCmd
       runner.route 'form',   to: Kojo::Commands::FormCmd
+      runner.route 'tojson', to: Kojo::Commands::ToJsonCmd
 
       runner
     end
