@@ -18,6 +18,8 @@ end
 help   "Generate changelog and append old changelog"
 action :changelog do
   run "git changelog --save"
+  # fix typos
+  File.write 'CHANGELOG.md', File.read('CHANGELOG.md').gsub(' jaon ', ' json ')
   # append older changelog (prior to switching to git-changelog)
   run "cat .changelog.old.md >> CHANGELOG.md"
 end

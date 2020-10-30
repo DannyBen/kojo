@@ -4,7 +4,7 @@ Change Log
 Untagged - Latest
 ----------------------------------------
 
-- Require jaon globally so it is available inside templates
+- Require json globally so it is available inside templates
 
 
 ## [v0.3.6](https://github.com/DannyBen/kojo/tree/v0.3.6) (2020-05-18)
