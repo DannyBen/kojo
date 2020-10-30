@@ -1,5 +1,3 @@
-require 'yaml'
-
 module Kojo
   # The Config class handles multiple template generation from a 
   # definitions YAML file.
