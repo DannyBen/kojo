@@ -1,0 +1,12 @@
+name: Test
+
+on:
+  pull_request:
+  push: { branches: master }
+
+jobs:
+  test:
+    name: Ruby ${{ matrix.ruby }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: { ruby: ['2.5', '2.6', '2.7'] }

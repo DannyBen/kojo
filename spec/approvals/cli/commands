@@ -4,3 +4,4 @@ Commands:
   config  Transform based on instructions from a config file
   single  Transform using a single file that contains the instructions
   form    Fill a template form interactively
+  tojson  Convert one or more YAML files to JSON

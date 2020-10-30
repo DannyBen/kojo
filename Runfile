@@ -34,7 +34,9 @@ action :examples do
     say_status :process, folder
 
     Dir.chdir folder do
-      system "./runme > output.txt 2>&1"
+      if File.exist? 'runme'
+        system "./runme > output.txt 2>&1"
+      end
     end
   end
   say_status :done, ''

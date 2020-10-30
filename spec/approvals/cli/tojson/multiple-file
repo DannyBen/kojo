@@ -1,0 +1,38 @@
+
+# tmp/clean-yamls/sample1.json
+{
+  "version": "3",
+  "services": {
+    "image": "alpine",
+    "volumes": [
+      "./app:/app",
+      "./cache:/cache"
+    ]
+  }
+}
+
+# tmp/clean-yamls/sample2.json
+{
+  "name": "Test",
+  "true": {
+    "pull_request": null,
+    "push": {
+      "branches": "master"
+    }
+  },
+  "jobs": {
+    "test": {
+      "name": "Ruby ${{ matrix.ruby }}",
+      "runs-on": "ubuntu-latest",
+      "strategy": {
+        "matrix": {
+          "ruby": [
+            "2.5",
+            "2.6",
+            "2.7"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+
+# tmp/clean-yamls/sample1.json
+{
+  "version": "3",
+  "services": {
+    "image": "alpine",
+    "volumes": [
+      "./app:/app",
+      "./cache:/cache"
+    ]
+  }
+}
