@@ -6,6 +6,7 @@ v0.3.8 - 2020-10-30
 
 - Require json globally so it is available inside templates
 - Refactor file save to always use base function
+- Add tojson command
 
 
 ## [v0.3.6](https://github.com/DannyBen/kojo/tree/v0.3.6) (2020-05-18)
