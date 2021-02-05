@@ -66,6 +66,10 @@ Include variables in your configuration templates by using this syntax:
 - Variables from the top level will be forwarded downstream, and aggregated 
   with any additional variables that are defined in subsequent `@imports`.
 
+Note that since the `%` sign is used for variable replacement, if you want
+your generated file to include a literal percent sign, you need to escape it
+as a `%%` in your template.
+
 ### Import
 
 ![kojo](images/features-import.svg)
