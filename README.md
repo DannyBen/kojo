@@ -68,7 +68,7 @@ Include variables in your configuration templates by using this syntax:
 
 Note that since the `%` sign is used for variable replacement, if you want
 your generated file to include a literal percent sign, you need to escape it
-as a `%%` in your template.
+as `%%` in your template.
 
 ### Import
 
