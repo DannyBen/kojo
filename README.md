@@ -155,7 +155,7 @@ YAML front matter.
 The YAML front matter should be structured like this:
 
 ```yaml
-filename2:
+filename1:
   arg: value
   another_arg: value
 
