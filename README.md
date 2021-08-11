@@ -1,6 +1,6 @@
 <div align='center'>
 
-![kojo](images/kojo.png)
+![kojo](support/kojo.png)
 
 # Kojo Configuration Ninja
 
@@ -55,7 +55,7 @@ relevant files, and the expected output.
 
 ### Variables
 
-![kojo](images/features-vars.svg)
+![kojo](support/features-vars.svg)
 
 Include variables in your configuration templates by using this syntax: 
 `%{varname}`
@@ -72,7 +72,7 @@ as `%%` in your template.
 
 ### Import
 
-![kojo](images/features-import.svg)
+![kojo](support/features-import.svg)
 
 Use the `@import filename` directive anywhere to include another file in the
 resulting configuration file.
@@ -93,7 +93,7 @@ The space after `filename` is optional.
 
 ### Transform an Entire Folder
 
-![kojo](images/features-dir.svg)
+![kojo](support/features-dir.svg)
 
 Process a folder containing templates and `@imports`, and generate a mirror
 output folder, with all the variables and `@imports` evaluated.
@@ -102,7 +102,7 @@ You may use `%{variables}` in filenames.
 
 ### Transform One to Many using Config
 
-![kojo](images/features-config.svg)
+![kojo](support/features-config.svg)
 
 Using the `kojo config` command together with a simple definitions file, you
 can:
@@ -147,7 +147,7 @@ output:
 
 ### Transform One to Many using Front Matter
 
-![kojo](images/features-single.svg)
+![kojo](support/features-single.svg)
 
 Define a template that contains the instructions on how to transform it as a
 YAML front matter.
@@ -172,7 +172,7 @@ to the template.
 
 ### Convert YAML to JSON
 
-![kojo](images/features-tojson.svg)
+![kojo](support/features-tojson.svg)
 
 Convert one or more YAML files to JSON.
 
@@ -185,7 +185,7 @@ input files should be valid YAML.
 
 ### Interactive Form Templates
 
-![kojo](images/features-form.svg)
+![kojo](support/features-form.svg)
 
 Using the `kojo form` command lets you define an ERB or [ERBX][erbx] template, and include interactive prompts to enter the input. 
 
@@ -195,11 +195,11 @@ Using the `kojo form` command lets you define an ERB or [ERBX][erbx] template, a
 4. If there is a file with the same name as the template, and with an `.rb` extension (for example `form.md` and `form.md.rb`), then the ruby file will be loaded into the ERB template as if it was written inside it.
 5. If you prefer using a single template file (without the ruby appendix), you can simply use regular ERB/ERBX tags, like demonstrated below.
 
-![kojo](images/features-form-inline.svg)
+![kojo](support/features-form-inline.svg)
 
 ### Conditions and Loops with ERB
 
-![kojo](images/features-erb.svg)
+![kojo](support/features-erb.svg)
 
 Template files are evaluated using ERB, so you can use any Ruby code for more
 advanced templates (for conditions, loops etc.).
@@ -215,7 +215,7 @@ Use this syntax for ruby code:
 When Kojo encounters a variable that was not supplied (either through the command 
 line or through a configuration file), it will prompt for a value.
 
-![kojo](images/interactive-mode.gif)
+![kojo](support/interactive-mode.gif)
 
 You can enable or disable interactive mode by setting the environment
 variable `KOJO_INTERACTIVE` to `yes` or `no`.
