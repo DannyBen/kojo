@@ -1,7 +1,9 @@
 require "runfile-tasks"
 require "byebug"
+require 'colsole'
 require 'kojo'
 require 'kojo/version'
+include Colsole
 
 title   "Kojo Developer Toolbelt"
 summary "Runfile tasks for building the Kojo gem"
@@ -12,16 +14,16 @@ RunfileTasks::Testing.rspec
 
 help   "Run interactive console"
 action :console, :c do
-  run "bundle exec bin/console"
+  exec "bundle exec bin/console"
 end
 
 help   "Generate changelog and append old changelog"
 action :changelog do
-  run "git changelog --save"
+  system "git changelog --save"
   # fix typos
   File.write 'CHANGELOG.md', File.read('CHANGELOG.md').gsub(' jaon ', ' json ')
   # append older changelog (prior to switching to git-changelog)
-  run "cat support/changelog.old.md >> CHANGELOG.md"
+  system "cat support/changelog.old.md >> CHANGELOG.md"
 end
 
 help "Generate example output files"
@@ -46,9 +48,9 @@ command :docker
 
 help   "Build the docker images"
 action :build, :b do
-  run "docker build -t dannyben/kojo ."
-  run "docker tag dannyben/kojo dannyben/kojo:#{Kojo::VERSION}"
-  run "docker images |grep kojo"
+  system "docker build -t dannyben/kojo ."
+  system "docker tag dannyben/kojo dannyben/kojo:#{Kojo::VERSION}"
+  system "docker images |grep kojo"
 end
 
 help   "Smoke test the docker image"
@@ -64,8 +66,8 @@ end
 
 help   "Push the docker images to Docker Hub (since autobuilds are only for the rich and famous...)"
 action :push, :p do
-  run "docker push dannyben/kojo"
-  run "docker push dannyben/kojo:#{Kojo::VERSION}"
+  system "docker push dannyben/kojo"
+  system "docker push dannyben/kojo:#{Kojo::VERSION}"
 end
 
 endcommand
