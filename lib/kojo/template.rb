@@ -38,8 +38,8 @@ module Kojo
 
     def eval_imports(content)
       result = []
-      
-      content.lines.each do |line|
+
+      content.compress_imports.lines.each do |line|
         line.chomp!
         spaces = line[/^\s*/].size
 
