@@ -1,0 +1,2 @@
+# command file
+CMD start-the-server --region %{region} --host %{host}

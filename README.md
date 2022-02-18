@@ -89,7 +89,15 @@ resulting configuration file.
 @import filename (arg: "value", arg2: "value")
 ```
 
-The space after `filename` is optional.
+The space after `filename` is optional, and the arguments list can be split to
+multiple lines:
+
+```ruby
+@import filename (
+  arg: "value",
+  arg2: "value"
+)
+```
 
 ### Transform an Entire Folder
 

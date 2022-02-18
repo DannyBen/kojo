@@ -1,0 +1,14 @@
+FROM alpine
+
+# base file
+ENV DEBUG 1
+
+ENV ENVIRONMENT production
+
+# packages file
+RUN apk add curl wget
+
+EXPOSE 3000
+
+# command file
+CMD start-the-server --region us --host example.com
