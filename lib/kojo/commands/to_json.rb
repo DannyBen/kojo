@@ -35,7 +35,7 @@ module Kojo
     private
 
       def tojson(path)
-        JSON.pretty_generate YAML.load_file(path)
+        JSON.pretty_generate YAML.properly_load_file(path)
       end
 
       # Glob patterns are usually handled by the shell, but in case

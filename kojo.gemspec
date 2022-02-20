@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.executables = Dir['bin/kojo*'].map { |f| File.basename f }
   s.homepage    = 'https://github.com/dannyben/kojo'
   s.license     = 'MIT'
-  s.required_ruby_version = ">= 2.5.0"
+  s.required_ruby_version = ">= 2.6.0"
 
   s.add_runtime_dependency 'mister_bin', '~> 0.6'
   s.add_runtime_dependency 'requires', '~> 0.1'
