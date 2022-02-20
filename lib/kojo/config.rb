@@ -59,7 +59,7 @@ module Kojo
     end
 
     def config
-      @config ||= YAML.load_file config_file
+      @config ||= YAML.properly_load_file config_file
     end
   end
 
