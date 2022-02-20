@@ -4,8 +4,8 @@ require 'byebug' if ENV['BYEBUG']
 require 'yaml'
 require 'json'
 
-requires 'kojo/refinements'
 requires 'kojo/extensions'
+requires 'kojo/refinements'
 
 require 'kojo/exceptions'
 require 'kojo/template'

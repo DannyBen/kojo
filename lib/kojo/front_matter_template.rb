@@ -32,7 +32,7 @@ module Kojo
     def read_file(file)
       raise Kojo::NotFoundError, "File not found: #{file}" unless File.exist? file
 
-      config = YAML.load_file file
+      config = YAML.properly_load_file file
       content = File.read(file)[/^---\s*$\n(.*)/m, 1]
 
       [config, content]

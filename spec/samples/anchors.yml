@@ -1,0 +1,4 @@
+list: &default
+- one
+- two
+other: *default
