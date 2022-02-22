@@ -34,7 +34,7 @@ describe Kojo::Commands::FormCmd do
       let(:args) { %W[form #{infile} --save #{outfile}] }
       before { File.delete outfile if File.exist? outfile }
 
-      it "prompts the user for input and saves the template", :focus do
+      it "prompts the user for input and saves the template" do
         expect(Kojo::Form).to receive(:new).with(infile).and_return(template)
         expect(template).to receive(:render).and_return('rendered')
         expect { subject.execute args }.to output("Saved #{outfile}\n").to_stdout
