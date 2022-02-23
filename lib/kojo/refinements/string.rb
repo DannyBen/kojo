@@ -47,7 +47,7 @@ module Kojo
       end
 
       def compress_imports
-        gsub /^ *@import [^(\s]*\s*\([^)]+\)$/ do |match|
+        gsub /^ *@import +[^(\s]+\s*\([\S\s]*?\) *$/ do |match|
           match.gsub /\r?\n\s*/, " "
         end
       end

@@ -1,6 +1,6 @@
 FROM alpine
 
-@import base
+@import base   
 
 ENV ENVIRONMENT %{env}
 
@@ -13,3 +13,4 @@ EXPOSE 3000
   host: "example.com"
 )
 
+# Done
