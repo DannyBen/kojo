@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -x
+kojo file Dockerfile env=production

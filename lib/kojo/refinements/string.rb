@@ -46,6 +46,12 @@ module Kojo
         raise Kojo::TemplateError, "#{e.message}\nin: #{filename}"
       end
 
+      def compress_imports
+        gsub /^ *@import +[^(\s]+\s*\([\S\s]*?\) *$/ do |match|
+          match.gsub /\r?\n\s*/, " "
+        end
+      end
+
     private 
 
       def get_user_input
