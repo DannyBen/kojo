@@ -33,7 +33,7 @@ module Kojo
         argfile = args['--args']
 
         if argfile
-          fileopts = YAML.properly_load_file(argfile).symbolize_keys
+          fileopts = YAML.load_file(argfile).symbolize_keys
           @opts = fileopts.merge @opts
         end
 

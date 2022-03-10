@@ -1,10 +1,9 @@
 require 'yaml'
 
 module YAML
+  # Make YAML.load behave the same in all Ruby versions
   # ref: https://bugs.ruby-lang.org/issues/17866
-  def self.properly_load_file(path)
-    YAML.load_file path, aliases: true
-  rescue ArgumentError
-    YAML.load_file path
+  class << self
+    alias_method :load, :unsafe_load if YAML.respond_to? :unsafe_load
   end
 end
