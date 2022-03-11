@@ -7,6 +7,6 @@ services:
 apps:
   app-one:
     environment: production
-  
+
   app-two:
     environment: production

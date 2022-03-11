@@ -64,7 +64,7 @@ module Kojo
     end
 
     def indent(text, spaces)
-      text.lines.collect { |line| "#{' ' * spaces}#{line}" }.join
+      text.lines.collect { |line| "#{' ' * spaces}#{line}" }.join.gsub(/^\s*$/, '')
     end
 
   end
