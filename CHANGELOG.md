@@ -1,6 +1,13 @@
 Change Log
 ========================================
 
+v0.4.1 - 2022-03-12
+----------------------------------------
+
+- Eliminate spaces from empty lines
+- Normalize YAML.load_file across Ruby versions
+
+
 v0.4.0 - 2022-02-24
 ----------------------------------------
 
