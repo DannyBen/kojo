@@ -41,10 +41,17 @@ format.
 $ gem install kojo
 ```
 
+Or with Homebrew:
+
+```shell
+$ brew install brew-gem    # once only, to enable the brew gem command
+$ brew gem install kojo
+```
+
 Or with Docker:
 
 ```shell
-$ alias kojo='docker run --rm -it -v "$PWD:/app" dannyben/kojo'
+$ alias kojo='docker run --rm -it --user $(id -u):$(id -g) --volume "$PWD:/app" dannyben/kojo'
 ```
 
 ## Usage
