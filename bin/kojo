@@ -10,7 +10,7 @@ begin
   exit runner.run ARGV
 rescue Kojo::Interrupt
   say! "\nGoodbye"
-  exit 1  
+  exit 1
 rescue => e
   puts e.backtrace.reverse if ENV['DEBUG']
   say! "!undred!#{e.class}!txtrst!\n#{e.message}"

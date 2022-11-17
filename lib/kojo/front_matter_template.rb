@@ -1,5 +1,5 @@
 module Kojo
-  # The FrontMatterTemplate class handles a single template file, that 
+  # The FrontMatterTemplate class handles a single template file, that
   # contains a YAML front matter.
   class FrontMatterTemplate
     using Refinements
@@ -23,10 +23,7 @@ module Kojo
   private
 
     def handle(args = {})
-      content = template
-      content = content.eval_erb args, file
-      content = content.eval_vars args, file
-      content
+      template.eval_erb(args, file).eval_vars(args, file)
     end
 
     def read_file(file)
@@ -38,5 +35,4 @@ module Kojo
       [config, content]
     end
   end
-
 end

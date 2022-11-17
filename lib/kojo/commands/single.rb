@@ -8,20 +8,20 @@ module Kojo
 
       attr_reader :opts, :infile, :outdir
 
-      help "Transform using a single file that contains the instructions"
+      help 'Transform using a single file that contains the instructions'
 
-      usage "kojo single INFILE [--save DIR] [ARGS...]"
-      usage "kojo single (-h|--help)"
+      usage 'kojo single INFILE [--save DIR] [ARGS...]'
+      usage 'kojo single (-h|--help)'
 
-      option "-s --save DIR", "Save output to directory instead of printing"
+      option '-s --save DIR', 'Save output to directory instead of printing'
 
-      param "INFILE", "Template to transform. The template should contain a YAML front matter with transformation instructions"
-      param "ARGS", "Optional key=value pairs"
+      param 'INFILE', 'Template to transform. The template should contain a YAML front matter with transformation instructions'
+      param 'ARGS', 'Optional key=value pairs'
 
-      example "kojo single Dockerfile"
-      example "kojo single template.Dockerfile --save ."
-      example "kojo single template.Dockerfile --save output"
-      example "kojo single template.Dockerfile scale=2"
+      example 'kojo single Dockerfile'
+      example 'kojo single template.Dockerfile --save .'
+      example 'kojo single template.Dockerfile --save output'
+      example 'kojo single template.Dockerfile scale=2'
 
       def run
         @opts = args['ARGS'].args_to_hash

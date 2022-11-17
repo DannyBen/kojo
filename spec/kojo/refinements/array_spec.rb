@@ -7,7 +7,7 @@ describe Array do
 
   describe '#args_to_hash' do
     it "converts array of 'key=value' to symbolized and typed hash" do
-      expect(subject.args_to_hash).to eq({ scale: 2, production: true, app: "ninja" })
+      expect(subject.args_to_hash).to eq({ scale: 2, production: true, app: 'ninja' })
     end
   end
 end

@@ -1,5 +1,5 @@
 module Kojo
-  # The Collection class is a wrapper around the {Template} object. It 
+  # The Collection class is a wrapper around the {Template} object. It
   # provides a mechanism for processing an entire directory of templates.
   class Collection
     using Refinements
@@ -28,7 +28,7 @@ module Kojo
       template = Template.new file
       template.import_base = import_base
 
-      path = file.sub(/#{dir}\//, '').resolve args
+      path = file.sub(%r{#{dir}/}, '').resolve args
 
       yield path, template.render(args)
     end

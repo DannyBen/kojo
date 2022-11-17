@@ -3,12 +3,12 @@ require 'kojo/version'
 requires 'commands'
 
 module Kojo
-  # The CLI class is used by the kojo binary and forwards incoming CLI 
+  # The CLI class is used by the kojo binary and forwards incoming CLI
   # commands to the relevant Kojo::Commands class
   class CLI
     def self.runner
       Kojo.interactive = ENV['KOJO_INTERACTIVE'] != 'no'
-      
+
       runner = MisterBin::Runner.new version: Kojo::VERSION
 
       runner.route 'file',   to: Kojo::Commands::FileCmd
@@ -21,5 +21,4 @@ module Kojo
       runner
     end
   end
-
 end
