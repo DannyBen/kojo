@@ -8,24 +8,24 @@ module Kojo
 
       attr_reader :input, :save_files, :replace_files
 
-      help "Convert one or more YAML files to JSON"
+      help 'Convert one or more YAML files to JSON'
 
-      usage "kojo tojson INPUT... [(--save | --replace)]"
-      usage "kojo tojson (-h|--help)"
+      usage 'kojo tojson INPUT... [(--save | --replace)]'
+      usage 'kojo tojson (-h|--help)'
 
-      option "-s --save", "Save each input file in the same directory"
-      option "-r --replace", "Save each input file in the same directory and delete the input file"
+      option '-s --save', 'Save each input file in the same directory'
+      option '-r --replace', 'Save each input file in the same directory and delete the input file'
 
-      param "INPUT", "Path to a YAML file or multiple files using a glob pattern"
+      param 'INPUT', 'Path to a YAML file or multiple files using a glob pattern'
 
-      example "kojo tojson myfile.yaml"
-      example "kojo tojson myfile.yaml --save"
-      example "kojo tojson indir/*.yaml"
-      example "kojo tojson indir/*.yaml --replace"
-      example "kojo tojson indir/**/*.yml"
+      example 'kojo tojson myfile.yaml'
+      example 'kojo tojson myfile.yaml --save'
+      example 'kojo tojson indir/*.yaml'
+      example 'kojo tojson indir/*.yaml --replace'
+      example 'kojo tojson indir/**/*.yml'
 
       def run
-        @input = get_input_files
+        @input = input_files
         @save_files = args['--save'] || args['--replace']
         @replace_files = args['--replace']
 
@@ -41,7 +41,7 @@ module Kojo
       # Glob patterns are usually handled by the shell, but in case
       # we still have '*' in our string (for example, if it was sent
       # quoted), we will do the globbing ourselves
-      def get_input_files
+      def input_files
         args['INPUT'].map do |path|
           path.include?('*') ? Dir[path].sort : path
         end.flatten

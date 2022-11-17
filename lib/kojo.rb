@@ -16,14 +16,12 @@ require 'kojo/form'
 
 module Kojo
   class << self
+    attr_writer :interactive
+
     def interactive?
       return @interactive unless @interactive.nil?
+
       @interactive = ENV['KOJO_INTERACTIVE'] == 'yes'
     end
-
-    def interactive=(value)
-      @interactive = value
-    end
   end
-
 end

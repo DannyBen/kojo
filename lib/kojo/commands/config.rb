@@ -8,22 +8,22 @@ module Kojo::Commands
 
     attr_reader :gen, :outdir, :opts, :import_base, :config_file
 
-    help "Transform based on instructions from a config file"
+    help 'Transform based on instructions from a config file'
 
-    usage "kojo config CONFIG [--save DIR --imports DIR --args FILE] [ARGS...]"
-    usage "kojo config (-h|--help)"
+    usage 'kojo config CONFIG [--save DIR --imports DIR --args FILE] [ARGS...]'
+    usage 'kojo config (-h|--help)'
 
-    option "-s --save DIR", "Save output to directory instead of printing"
-    option "-i --imports DIR", "Specify base directory for @import directives"
-    option "-a --args FILE", "Load arguments from YAML file"
+    option '-s --save DIR', 'Save output to directory instead of printing'
+    option '-i --imports DIR', 'Specify base directory for @import directives'
+    option '-a --args FILE', 'Load arguments from YAML file'
 
-    param "CONFIG", "YAML configuration file"
-    param "ARGS", "Optional key=value pairs"
+    param 'CONFIG', 'YAML configuration file'
+    param 'ARGS', 'Optional key=value pairs'
 
-    example "kojo config config.yml"
-    example "kojo config config.yml --save output"
-    example "kojo config config.yml -s output scale=3"
-    example "kojo config config.yml -s output --args args.yml"
+    example 'kojo config config.yml'
+    example 'kojo config config.yml --save output'
+    example 'kojo config config.yml -s output scale=3'
+    example 'kojo config config.yml -s output --args args.yml'
 
     def run
       @config_file = args['CONFIG']

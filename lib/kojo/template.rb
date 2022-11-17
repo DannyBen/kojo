@@ -24,15 +24,14 @@ module Kojo
   protected
 
     def evaluate(file)
-      content = read_file file
-      content = content.eval_erb args, file
-      content = content.eval_vars args, file
-      content = eval_imports content
-      content
+      eval_imports read_file(file)
+        .eval_erb(args, file)
+        .eval_vars(args, file)
     end
 
     def read_file(file)
       raise Kojo::NotFoundError, "File not found: #{file}" unless File.exist? file
+
       File.read file
     end
 
@@ -46,18 +45,18 @@ module Kojo
         if line =~ /^\s*@import ([^(\s]*)\s*(?:\((.*)\))?\s*/
           file = $1
           args = $2 || ''
-          args = instance_eval("{#{args}}")
+          args = instance_eval("{#{args}}", __FILE__, __LINE__)
           imported = import file, args
           line = indent imported, spaces
         end
-        
+
         result.push line
       end
 
       result.join "\n"
     end
 
-    def import(file, import_args={})
+    def import(file, import_args = {})
       filename = File.expand_path "#{file}#{extension}", import_base
       all_args = args.merge import_args
       self.class.new(filename).render(all_args)
@@ -66,6 +65,5 @@ module Kojo
     def indent(text, spaces)
       text.lines.collect { |line| "#{' ' * spaces}#{line}" }.join.gsub(/^\s*$/, '')
     end
-
   end
 end

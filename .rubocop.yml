@@ -1,0 +1,14 @@
+inherit_gem:
+  rentacop: rentacop.yml
+
+AllCops:
+  TargetRubyVersion: 2.6
+  SuggestExtensions: false
+  Exclude:
+    - 'examples/**/*'
+    - 'spec/samples/**/*'
+
+# Commands may have long output lines
+Layout/LineLength:
+  Exclude:
+    - 'lib/kojo/commands/*.rb'

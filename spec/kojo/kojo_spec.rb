@@ -6,40 +6,38 @@ describe Kojo do
   describe '#interactive?' do
     before { Kojo.interactive = nil }
 
-    context "in library context" do
-      it "defaults to false" do
+    context 'in library context' do
+      it 'defaults to false' do
         expect(subject).not_to be_interactive
       end
 
-      context "when KOJO_INTERACTIVE == yes" do
+      context 'when KOJO_INTERACTIVE == yes' do
         before { ENV['KOJO_INTERACTIVE'] = 'yes' }
         after  { ENV['KOJO_INTERACTIVE'] = nil }
-      
-        it "returns true" do
-          expect(subject).to be_interactive         
+
+        it 'returns true' do
+          expect(subject).to be_interactive
         end
       end
     end
 
-    context "in CLI context" do
-      it "defaults to true" do
+    context 'in CLI context' do
+      it 'defaults to true' do
         expect(subject).not_to be_interactive
         Kojo::CLI.runner
         expect(subject).to be_interactive
       end
 
-      context "when KOJO_INTERACTIVE == no" do
+      context 'when KOJO_INTERACTIVE == no' do
         before { ENV['KOJO_INTERACTIVE'] = 'no' }
         after  { ENV['KOJO_INTERACTIVE'] = nil }
-        
-        it "returns false" do
+
+        it 'returns false' do
           expect(subject).not_to be_interactive
           Kojo::CLI.runner
           expect(subject).not_to be_interactive
         end
       end
-
     end
-    
   end
 end

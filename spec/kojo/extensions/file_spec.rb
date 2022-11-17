@@ -7,12 +7,12 @@ describe File do
       expect(Dir).not_to exist('tmp/deep')
     end
 
-    let(:file) { "tmp/deep/dish/file.txt" }
+    let(:file) { 'tmp/deep/dish/file.txt' }
 
-    it "creates the directory structure and writes the file" do
-      File.deep_write file, "works"
+    it 'creates the directory structure and writes the file' do
+      File.deep_write file, 'works'
       expect(File).to exist(file)
-      expect(File.read file).to eq "works"
+      expect(File.read file).to eq 'works'
     end
   end
 end

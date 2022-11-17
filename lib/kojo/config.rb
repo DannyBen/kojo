@@ -1,5 +1,5 @@
 module Kojo
-  # The Config class handles multiple template generation from a 
+  # The Config class handles multiple template generation from a
   # definitions YAML file.
   class Config
     using Refinements
@@ -25,10 +25,10 @@ module Kojo
     def generate_from_file(opts)
       config['output'].each do |target, config_opts|
         local_opts = opts.merge config_opts.symbolize_keys
-        
+
         template = Template.new source
         template.import_base = import_base if import_base
-        
+
         yield target, template.render(local_opts)
       end
     end
@@ -62,5 +62,4 @@ module Kojo
       @config ||= YAML.load_file config_file
     end
   end
-
 end

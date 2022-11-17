@@ -8,22 +8,22 @@ module Kojo
 
       attr_reader :opts, :indir, :outdir, :import_base
 
-      help "Transform a folder of templates to a similar output folder"
+      help 'Transform a folder of templates to a similar output folder'
 
-      usage "kojo dir INDIR [--save DIR --imports DIR --args FILE] [ARGS...]"
-      usage "kojo dir (-h|--help)"
+      usage 'kojo dir INDIR [--save DIR --imports DIR --args FILE] [ARGS...]'
+      usage 'kojo dir (-h|--help)'
 
-      option "-s --save DIR", "Save output to directory instead of printing"
-      option "-i --imports DIR", "Specify base directory for @import directives"
-      option "-a --args FILE", "Load arguments from YAML file"
+      option '-s --save DIR', 'Save output to directory instead of printing'
+      option '-i --imports DIR', 'Specify base directory for @import directives'
+      option '-a --args FILE', 'Load arguments from YAML file'
 
-      param "INDIR", "Directory containing templates to transform"
-      param "ARGS", "Optional key=value pairs"
+      param 'INDIR', 'Directory containing templates to transform'
+      param 'ARGS', 'Optional key=value pairs'
 
-      example "kojo dir indir"
-      example "kojo dir in --save out env=production"
-      example "kojo dir in --save out --imports snippets env=production"
-      example "kojo dir in -s out -i snippets -a args.yml"
+      example 'kojo dir indir'
+      example 'kojo dir in --save out env=production'
+      example 'kojo dir in --save out --imports snippets env=production'
+      example 'kojo dir in -s out -i snippets -a args.yml'
 
       def run
         @opts = args['ARGS'].args_to_hash
