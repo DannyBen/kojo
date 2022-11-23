@@ -16,7 +16,7 @@ describe 'custom exceptions' do
     }
   end
 
-  it 'raise kojo errors' do
+  it 'raises kojo errors' do
     FileUtils.mkdir_p empty_dir
 
     cases.each do |name, command|

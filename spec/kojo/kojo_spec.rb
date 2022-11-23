@@ -4,9 +4,9 @@ describe Kojo do
   subject { described_class }
 
   describe '#interactive?' do
-    before { Kojo.interactive = nil }
+    before { described_class.interactive = nil }
 
-    context 'in library context' do
+    context 'when in library context' do
       it 'defaults to false' do
         expect(subject).not_to be_interactive
       end
@@ -21,7 +21,7 @@ describe Kojo do
       end
     end
 
-    context 'in CLI context' do
+    context 'when in CLI context' do
       it 'defaults to true' do
         expect(subject).not_to be_interactive
         Kojo::CLI.runner

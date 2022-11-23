@@ -10,9 +10,9 @@ describe File do
     let(:file) { 'tmp/deep/dish/file.txt' }
 
     it 'creates the directory structure and writes the file' do
-      File.deep_write file, 'works'
-      expect(File).to exist(file)
-      expect(File.read file).to eq 'works'
+      described_class.deep_write file, 'works'
+      expect(described_class).to exist(file)
+      expect(described_class.read file).to eq 'works'
     end
   end
 end

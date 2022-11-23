@@ -33,7 +33,7 @@ describe Kojo::Form, :tty do
     context 'with positional args and keyword args' do
       let(:args) { ['Choose your destiny?', %w[Scorpion Kano Jax], { cycle: true }] }
 
-      it 'works' do
+      it 'forwards calls to a TTY::Prompt instance' do
         expect(subject.prompt).to receive(:select).with(*args).and_return('Jax')
         subject.select(*args)
       end

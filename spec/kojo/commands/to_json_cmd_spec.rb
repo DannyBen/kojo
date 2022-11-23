@@ -17,6 +17,7 @@ describe Kojo::Commands::ToJsonCmd do
 
   context 'with arguments' do
     before { system 'rm -rf tmp/clean-yamls ; cp -R spec/samples/clean-yamls tmp/' }
+
     let(:args) { ['tojson', input] }
 
     context 'with a single INPUT file' do

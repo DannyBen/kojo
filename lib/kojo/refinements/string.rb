@@ -6,10 +6,10 @@ module Kojo
     refine String do
       # Convert a string to the most appropriate type
       def to_typed
-        if self =~ /\A[+-]?\d+\Z/
+        if /\A[+-]?\d+\Z/.match?(self)
           to_i
 
-        elsif self =~ /\A[+-]?\d+\.\d+\Z/
+        elsif /\A[+-]?\d+\.\d+\Z/.match?(self)
           to_f
 
         elsif %w[yes no true false].include? downcase

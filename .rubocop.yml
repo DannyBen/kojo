@@ -1,5 +1,11 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
 inherit_gem:
-  rentacop: rentacop.yml
+  rentacop:
+    - rentacop.yml
+    - rspec.yml
 
 AllCops:
   TargetRubyVersion: 2.6
@@ -12,3 +18,13 @@ AllCops:
 Layout/LineLength:
   Exclude:
     - 'lib/kojo/commands/*.rb'
+
+# Allow longer examples
+RSpec/ExampleLength:
+  Max: 24
+
+# Allow `expect` instead of `allow` in some cases
+RSpec/StubbedMock:
+  Exclude:
+    - 'spec/kojo/form_spec.rb'
+    - 'spec/tty_spec_helper.rb'

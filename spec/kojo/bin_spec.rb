@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe 'bin/kojo' do
   subject { Kojo::CLI.runner }
+
   let(:command) { 'bin/kojo file spec/samples/basic.yml' }
 
   it 'shows list of commands' do
