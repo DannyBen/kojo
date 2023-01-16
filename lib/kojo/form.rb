@@ -46,14 +46,14 @@ module Kojo
     end
 
     # Below are TTY::Prompt functions that are not captured by the
-    # `mthod_missing`, so we specify them explicitly
+    # `method_missing`, so we specify them explicitly
 
-    def select(*args, &block)
-      prompt.select(*args, &block)
+    def select(...)
+      prompt.select(...)
     end
 
-    def warn(*args, &block)
-      prompt.warn(*args, &block)
+    def warn(...)
+      prompt.warn(...)
     end
   end
 end

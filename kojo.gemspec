@@ -13,11 +13,11 @@ Gem::Specification.new do |s|
   s.executables = Dir['bin/kojo*'].map { |f| File.basename f }
   s.homepage    = 'https://github.com/dannyben/kojo'
   s.license     = 'MIT'
-  s.required_ruby_version = '>= 2.6.0'
+  s.required_ruby_version = '>= 2.7.0'
 
-  s.add_runtime_dependency 'colsole', '~> 0.5'
+  s.add_runtime_dependency 'colsole', '~> 0.7.0'
   s.add_runtime_dependency 'erbx', '~> 0.1.1'
-  s.add_runtime_dependency 'mister_bin', '~> 0.6'
+  s.add_runtime_dependency 'mister_bin', '~> 0.7.0'
   s.add_runtime_dependency 'requires', '~> 1.0'
   s.add_runtime_dependency 'tty-prompt', '~> 0.21'
   s.metadata['rubygems_mfa_required'] = 'true'
