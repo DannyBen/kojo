@@ -8,4 +8,4 @@
 /.yardoc
 /toc.txt
 *.gem
-debug.rb
+debug.runfile
