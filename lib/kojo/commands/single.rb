@@ -39,7 +39,7 @@ module Kojo
 
       def show(template)
         template.render opts do |file, output|
-          say "\n!txtgrn!# #{file}"
+          say "\ng`# #{file}`"
           say output
         end
       end

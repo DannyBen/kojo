@@ -50,7 +50,7 @@ module Kojo
       def show
         input.each do |infile|
           outfile = infile.gsub(/\.ya?ml/, '.json')
-          say "\n!txtgrn!# #{outfile}"
+          say "\ng`# #{outfile}`"
           say tojson(infile)
         end
       end
