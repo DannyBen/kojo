@@ -55,7 +55,7 @@ module Kojo
 
       def show(collection)
         collection.render @opts do |file, output|
-          say "\n!txtgrn!# #{file}"
+          say "\ng`# #{file}`"
           say output
         end
       end

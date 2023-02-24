@@ -55,7 +55,7 @@ module Kojo::Commands
       if outdir
         save "#{outdir}/#{file}", output
       else
-        say "\n!txtgrn!# #{file}"
+        say "\ng`# #{file}`"
         say output
       end
     end

@@ -13,6 +13,6 @@ rescue Kojo::Interrupt
   exit 1
 rescue => e
   puts e.backtrace.reverse if ENV['DEBUG']
-  say! "!undred!#{e.class}!txtrst!\n#{e.message}"
+  say! "ru`#{e.class}`\n#{e.message}"
   exit 1
 end

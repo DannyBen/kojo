@@ -1,9 +1,0 @@
-#!/usr/bin/env ruby
-
-require 'irb'
-require 'irb/completion'
-require 'kojo'
-
-include Kojo
-
-IRB.start
