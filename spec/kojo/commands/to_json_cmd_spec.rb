@@ -72,8 +72,8 @@ describe Kojo::Commands::ToJsonCmd do
 
           expect { subject.execute args }.to output_approval('cli/tojson/multiple-file-save')
 
-          expect(Dir[output].sort).to eq ['tmp/clean-yamls/sample1.json', 'tmp/clean-yamls/sample2.json']
-          expect(Dir[input].sort).not_to be_empty
+          expect(Dir[output]).to eq ['tmp/clean-yamls/sample1.json', 'tmp/clean-yamls/sample2.json']
+          expect(Dir[input]).not_to be_empty
           expect(File.read Dir[output].min).to match_approval('cli/tojson/single-file-save-content')
         end
       end
@@ -86,8 +86,8 @@ describe Kojo::Commands::ToJsonCmd do
 
           expect { subject.execute args }.to output_approval('cli/tojson/multiple-file-save')
 
-          expect(Dir[output].sort).to eq ['tmp/clean-yamls/sample1.json', 'tmp/clean-yamls/sample2.json']
-          expect(Dir[input].sort).to be_empty
+          expect(Dir[output]).to eq ['tmp/clean-yamls/sample1.json', 'tmp/clean-yamls/sample2.json']
+          expect(Dir[input]).to be_empty
           expect(File.read Dir[output].min).to match_approval('cli/tojson/single-file-save-content')
         end
       end
