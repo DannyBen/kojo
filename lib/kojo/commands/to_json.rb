@@ -43,7 +43,7 @@ module Kojo
       # quoted), we will do the globbing ourselves
       def input_files
         args['INPUT'].map do |path|
-          path.include?('*') ? Dir[path].sort : path
+          path.include?('*') ? Dir[path] : path
         end.flatten
       end
 
