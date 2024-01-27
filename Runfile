@@ -1,4 +1,4 @@
-require "byebug"
+require 'debug'
 require 'kojo'
 require 'kojo/version'
 
