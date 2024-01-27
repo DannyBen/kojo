@@ -1,5 +1,5 @@
 require 'requires'
-require 'byebug' if ENV['BYEBUG']
+require 'debug' if ENV['DEBUGGER']
 
 require 'yaml'
 require 'json'
