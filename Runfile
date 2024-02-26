@@ -10,15 +10,6 @@ import_gem 'runfile-tasks/gem'
 import_gem 'runfile-tasks/docker', image: 'dannyben/kojo', version: Kojo::VERSION
 import 'debug'
 
-help   "Generate changelog and append old changelog"
-action :changelog do
-  system "git changelog --save"
-  # fix typos
-  File.write 'CHANGELOG.md', File.read('CHANGELOG.md').gsub(' jaon ', ' json ')
-  # append older changelog (prior to switching to git-changelog)
-  system "cat support/changelog.old.md >> CHANGELOG.md"
-end
-
 help "Generate example output files"
 action :examples do
   say 'g`invoke` examples'
