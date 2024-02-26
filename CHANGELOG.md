@@ -1,6 +1,13 @@
 Change Log
 ========================================
 
+Untagged - Latest
+----------------------------------------
+
+- Drop support for Ruby 2.x
+- Build docker images automatically
+
+
 v0.4.4 - 2023-02-24
 ----------------------------------------
 
@@ -39,6 +46,7 @@ v0.3.9 - 2022-02-22
 - Fix Ruby 3.1 compatibility and drop support for Ruby 2.5
 
 
+<!-- break v0.3.8 -->
 v0.3.8 - 2020-10-30
 ----------------------------------------
 
