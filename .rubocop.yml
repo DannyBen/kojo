@@ -1,4 +1,4 @@
-require:
+plugins:
   - rubocop-performance
   - rubocop-rspec
 
@@ -8,7 +8,8 @@ inherit_gem:
     - rspec.yml
 
 AllCops:
-  TargetRubyVersion: 3.0
+  TargetRubyVersion: 3.2
+  SuggestExtensions: false
   Exclude:
     - 'examples/**/*'
     - 'spec/samples/**/*'

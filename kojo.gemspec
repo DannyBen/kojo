@@ -13,13 +13,19 @@ Gem::Specification.new do |s|
   s.executables = Dir['bin/kojo*'].map { |f| File.basename f }
   s.homepage    = 'https://github.com/dannyben/kojo'
   s.license     = 'MIT'
-  s.required_ruby_version = '>= 3.0'
+  s.required_ruby_version = '>= 3.2'
 
-  s.add_runtime_dependency 'colsole', '>= 0.8.1', '< 2'
-  s.add_runtime_dependency 'erbx', '~> 0.1'
-  s.add_runtime_dependency 'mister_bin', '~> 0.7'
-  s.add_runtime_dependency 'requires', '~> 1.0'
-  s.add_runtime_dependency 'tty-prompt', '~> 0.21'
+  s.add_dependency 'colsole', '>= 0.8.1', '< 2'
+  s.add_dependency 'erbx', '~> 0.1'
+  s.add_dependency 'mister_bin', '~> 0.7'
+  s.add_dependency 'ostruct', '~> 0.6'
+  s.add_dependency 'requires', '~> 1.0'
+  s.add_dependency 'tty-prompt', '~> 0.21'
 
-  s.metadata['rubygems_mfa_required'] = 'true'
+  s.metadata = {
+    'bug_tracker_uri'       => 'https://github.com/DannyBen/kojo/issues',
+    'changelog_uri'         => 'https://github.com/DannyBen/kojo/blob/master/CHANGELOG.md',
+    'source_code_uri'       => 'https://github.com/DannyBen/kojo',
+    'rubygems_mfa_required' => 'true',
+  }
 end

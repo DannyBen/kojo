@@ -12,11 +12,11 @@ module Kojo
       @import_base = nil
     end
 
-    def generate(opts = {}, &block)
+    def generate(opts = {}, &)
       if directory_mode?
-        generate_from_dir opts, &block
+        generate_from_dir(opts, &)
       else
-        generate_from_file opts, &block
+        generate_from_file(opts, &)
       end
     end
 
