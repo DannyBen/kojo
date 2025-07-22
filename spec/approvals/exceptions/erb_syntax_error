@@ -1,5 +1,9 @@
 Kojo::TemplateError
-(erb):5: syntax error, unexpected end-of-input, expecting keyword_end
-; _erbout
-         ^
+(erb):5: syntax errors found
+  3 | _erbout.<< "  failed: true\n".freeze
+  4 |  _erbout.<< " end \n".freeze
+> 5 |  _erbout
+    |          ^ expected an `end` to close the conditional clause
+    |          ^ unexpected end-of-input, assuming it is closing the parent top level context
+
 in: spec/samples/errors/erb-syntax-error.yml

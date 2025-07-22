@@ -30,9 +30,8 @@ describe 'custom exceptions' do
         actual = "#{e.class}\n#{e.message}"
       end
 
-      # Bigger difference in this case between RUby 2.6 and 2.5
-      # TODO: Improve this you lazy bum...
-      distance = name == :erb_syntax_error ? 30 : 2
+      # FIXME: Bigger difference in this case between different Ruby versions
+      distance = name == :erb_syntax_error ? 220 : 2
 
       expect(actual).to match_approval(expected).diff(distance)
     end
