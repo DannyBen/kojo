@@ -12,23 +12,7 @@ format.
 
 ---
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Variables](#variables)
-  - [Import](#import)
-  - [Transform an Entire Folder](#transform-an-entire-folder)
-  - [Transform One to Many using Config](#transform-one-to-many-using-config)
-  - [Transform One to Many using Front Matter](#transform-one-to-many-using-front-matter)
-  - [Convert YAML to JSON](#convert-yaml-to-json)
-  - [Interactive Form Templates](#interactive-form-templates)
-  - [Conditions and Loops with ERB](#conditions-and-loops-with-erb)
-- [Interactive Fallback](#interactive-fallback)
-- [Using from Ruby Code](#using-from-ruby-code)
-- [Contributing / Support](#contributing--support)
-
----
+![repocard](repocard.svg)
 
 ## Installation
 
