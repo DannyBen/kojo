@@ -12,7 +12,7 @@ format.
 
 ---
 
-![repocard](repocard.svg)
+![repocard](https://repocard.dannyben.com/svg/kojo.svg)
 
 ## Installation
 
